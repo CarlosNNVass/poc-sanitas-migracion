@@ -1,0 +1,8 @@
+{
+  "mappings": [
+    "/content/poc-sanitas-migracion/:/"
+  ],
+  "includes": [
+    "/content/poc-sanitas-migracion/"
+  ]
+}

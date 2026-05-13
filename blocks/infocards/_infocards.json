@@ -1,0 +1,107 @@
+{
+  "definitions": [
+    {
+      "title": "Infocards",
+      "id": "infocards",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Infocards",
+              "model": "infocards",
+              "filter": "infocards"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Infocard item",
+      "id": "infocard-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Infocard item",
+              "model": "infocard-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "infocards",
+      "fields": [
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes",
+          "label": "Style",
+          "value": "default",
+          "options": [
+            { "name": "Default", "value": "default" },
+            { "name": "Gradient", "value": "gradient" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infocard-item",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "value": "",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "value": "",
+          "label": "Description"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "value": "Más información",
+          "label": "Link text"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "icon",
+          "label": "Icon",
+          "value": "monedas",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "Monedas", "value": "a-icon__coPaymentLinear" },
+            { "name": "Seguridad", "value": "a-icon__shieldProtectionLinear" },
+            { "name": "Lector", "value": "a-icon__purseLinear" },
+            { "name": "Perro", "value": "a-icon__animalFootprintLinear" },
+            { "name": "Muela", "value": "a-icon__dentistryLinear" },
+            { "name": "Mundo", "value": "a-icon__worldLinear" }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "infocards",
+      "components": ["infocard-item"]
+    }
+  ]
+}

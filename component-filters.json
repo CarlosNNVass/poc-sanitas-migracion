@@ -1,0 +1,85 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "accordion",
+      "opinions",
+      "button-list",
+      "infocards",
+      "promotion-banner",
+      "form",
+      "service-cards"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
+    "id": "button-list",
+    "components": [
+      "button-list-item"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "form",
+    "components": [
+      "form-field"
+    ]
+  },
+  {
+    "id": "infocards",
+    "components": [
+      "infocard-item"
+    ]
+  },
+  {
+    "id": "opinions",
+    "components": [
+      "opinion-item"
+    ]
+  },
+  {
+    "id": "service-cards",
+    "components": [
+      "service-card"
+    ]
+  }
+]

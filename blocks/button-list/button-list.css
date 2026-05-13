@@ -1,0 +1,12 @@
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button-list-item {
+  /* los items actúan como contenedores de los botones */
+}
+
+

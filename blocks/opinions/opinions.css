@@ -1,0 +1,216 @@
+.opinions.block {
+  position: relative;
+  width: 100%;
+  padding: 24px 0;
+  background: #f5f8fc;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  
+}
+
+.opinions-wrapper {
+  position: relative;
+  padding: 0 32px;
+  max-width: 1280px;
+}
+
+.opinions-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 8px 4px;
+}
+
+.opinions-track::-webkit-scrollbar {
+  display: none;
+}
+
+.opinions-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .opinions-item {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+}
+
+@media (min-width: 1100px) {
+  .opinions-item {
+    flex: 0 0 calc((100% - 48px) / 3);
+  }
+}
+
+/* Header con nombre a la izq y fecha a la der */
+.opinions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.opinions-name {
+  font-size: 1.4rem;
+  color: #21272a;
+  font-family: Bupa, Arial;
+}
+@media (min-width: 40em) {
+  .opinions-name {
+    font-size: calc(1.13636vw + 0.67273rem);
+  }  
+}
+@media (min-width: 62em) {
+    .opinions-name{
+        font-size: 1.8rem;
+    }
+}
+.opinions-date {
+  font-size: 1.2rem;
+  color: #929BA2;
+  line-height: 1.6rem;
+  white-space: nowrap;
+}
+@media (min-width: 40em) {
+    .opinions-date {
+        font-size: calc(0vw + 1.2rem);
+    }
+}
+@media (min-width: 62em) {
+    .opinions-date {
+        font-size: 1.2rem;
+    }
+}
+/* Estrellas */
+.opinions-stars {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.opinions-star {
+  font-size: 1.375rem;
+  line-height: 1;
+}
+
+.opinions-star.is-filled {
+  color: #f5b301;
+}
+
+.opinions-star.is-empty {
+  color: #e5e7eb;
+}
+
+/* Texto */
+.opinions-body {
+      color: #21272a !important;
+  line-height: 1.5;
+  color: #374151;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.opinions-body p {
+  margin: 0;
+  font-size: 1.3rem !important;
+  line-height: 2rem;
+
+}
+
+@media (min-width: 40em) {
+    .opinions-body p{
+        font-size: calc(0.85227vw + 0.75455rem) !important;
+        line-height: 2.2rem;
+    }
+}
+@media (min-width: 62em) {
+    .opinions-body p{
+        font-size: 1.6rem !important;
+    }
+}
+/* Flechas */
+.opinions-arrow {
+  position: absolute;
+  top: calc(50% - 20px);
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.opinions-arrow:hover {
+  background: #f9fafb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+.opinions-arrow:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.opinions-arrow-prev {
+  left: 0;
+}
+
+.opinions-arrow-next {
+  right: 0;
+}
+
+/* Dots */
+.opinions-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.opinions-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.opinions-dot:hover {
+  background: #94a3b8;
+}
+
+.opinions-dot.is-active {
+  background: #2563eb;
+}
+
+.opinions-dot:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}

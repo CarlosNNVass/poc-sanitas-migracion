@@ -1,0 +1,87 @@
+.service-cards.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (width >= 768px) {
+  .service-cards.block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Card (= cada row del block) ── */
+.service-cards .service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  padding: 24px;
+  gap: 12px;
+}
+
+/* ── Icon cell ── */
+.service-cards .service-card__icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.service-cards .service-card__icon img,
+.service-cards .service-card__icon picture {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Content cell ── */
+.service-cards .service-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+/* ── Title ── */
+.service-cards .service-card__title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #21272a;
+}
+
+/* ── Description ── */
+.service-cards .service-card__desc {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #4e5357;
+}
+
+/* ── Links list ── */
+.service-cards .service-card__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-cards .service-card__links li {
+  margin: 0;
+  padding: 0;
+}
+
+.service-cards .service-card__links a {
+  color: #006eb8;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.service-cards .service-card__links a:hover {
+  text-decoration: underline;
+}

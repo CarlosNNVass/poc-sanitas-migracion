@@ -1,0 +1,107 @@
+{
+  "definitions": [
+    {
+      "title": "Form",
+      "id": "form",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Form",
+              "filter": "form"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Form field",
+      "id": "form-field",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Form field",
+              "model": "form-field"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "form",
+      "fields": [
+              {
+        "component": "text",
+        "name": "submitLabel",
+        "label": "Submit label"
+      }
+      ]
+    },
+    {
+      "id": "form-field",
+      "fields": [
+      {
+        "component": "richtext",
+        "name": "label",
+        "label": "Label",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Name"
+      },
+      {
+        "component": "select",
+        "name": "type",
+        "label": "Type",
+        "options": [
+          { "name": "Text", "value": "text" },
+          { "name": "Email", "value": "email" },
+          { "name": "Phone", "value": "tel" },
+          { "name": "Select", "value": "select" },
+          { "name": "Checkbox", "value": "checkbox" }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "width",
+        "label": "Field width",
+        "options": [
+          { "name": "100%", "value": "100" },
+          { "name": "50%", "value": "50" }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "options",
+        "label": "Options (one per line -> label:value) / Checkbox text",
+        "valueType": "string"
+      },
+
+      {
+        "component": "aem-content",
+        "name": "tooltipReference",
+        "label": "Tooltip content reference"
+      },
+      {
+        "component": "richtext",
+        "name": "modalTitle",
+        "label": "Title of the modal",
+        "valueType": "string"
+      }
+    ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "form",
+      "components": ["form-field"]
+    }
+  ]
+}

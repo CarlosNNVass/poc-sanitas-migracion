@@ -1,0 +1,403 @@
+/* ============================================================
+   Header variables
+   ============================================================ */
+:root {
+  --header-navy: #003057;
+  --header-blue: #006eb8;
+  --header-masthead-height: 40px;
+  --header-content-height: 72px;
+}
+
+/* ============================================================
+   Wrapper — sticky, full width, on top
+   ============================================================ */
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.o-mainHeader {
+  font-family: var(--body-font-family);
+  background-color: var(--background-color);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+}
+
+/* ============================================================
+   Masthead — dark top bar
+   ============================================================ */
+.o-mainHeader__mastHead {
+  background-color: var(--header-navy);
+  height: var(--header-masthead-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 24px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Tabs: Particulares | Empresas */
+.m-mastHead__tabs {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  height: 100%;
+}
+
+.m-mastHead__tabs li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+}
+
+.m-mastHead__tabs li.-isActive {
+  border-bottom-color: #fff;
+  background-color: #fff;
+      color: #21272a;
+
+}
+
+.m-mastHead__tabs a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 0 16px;
+  white-space: nowrap;
+}
+
+.m-mastHead__tabs li.-isActive a {
+        color: #21272a;
+
+  font-weight: 600;
+}
+
+.m-mastHead__tabs a:hover {
+  color: #fff;
+}
+
+/* Login action */
+.m-mastHead__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.m-mastHead__login {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.m-mastHead__login:hover {
+  color: rgb(255 255 255 / 80%);
+}
+
+.m-mastHead__login i {
+  font-size: 16px;
+}
+
+/* ============================================================
+   Content header — logo + nav + cta
+   ============================================================ */
+.o-mainHeader__contentHeader {
+  display: flex;
+  align-items: center;
+  height: var(--header-content-height);
+  padding: 0 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  gap: 24px;
+  position: relative;
+}
+
+/* ============================================================
+   Logo
+   ============================================================ */
+.a-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.a-logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   Primary nav
+   ============================================================ */
+.m-primaryNavMenu {
+  flex: 1 1 auto;
+  display: none;
+}
+
+.m-primaryNavMenu__ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+  align-items: center;
+  height: 100%;
+}
+
+.m-primaryNavMenu__item {
+  position: relative;
+  height: var(--header-content-height);
+  display: flex;
+  align-items: center;
+}
+
+.m-primaryNavMenu__link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  color: #21272a;
+  text-decoration: none;
+  font-size: 15px;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+.m-primaryNavMenu__item:hover > .m-primaryNavMenu__link,
+.m-primaryNavMenu__item[aria-expanded='true'] > .m-primaryNavMenu__link {
+  background-color: var(--header-blue);
+  color: #fff;
+}
+
+/* Dropdown arrow for items with submenu */
+.m-primaryNavMenu__item.-hasSubmenu > .m-primaryNavMenu__link::after {
+  content: '';
+  display: inline-block;
+  margin-left: 6px;
+  width: 6px;
+  height: 6px;
+  border: 2px solid currentcolor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+  position: relative;
+  top: -2px;
+}
+
+.m-primaryNavMenu__item.-hasSubmenu[aria-expanded='true'] > .m-primaryNavMenu__link::after {
+  transform: rotate(-135deg);
+  top: 2px;
+}
+
+/* ============================================================
+   Submenu dropdown
+   ============================================================ */
+.m-subNavMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+  border-top: 3px solid var(--header-blue);
+  z-index: 200;
+}
+
+.m-primaryNavMenu__item[aria-expanded='true'] > .m-subNavMenu {
+  display: block;
+}
+
+.m-subNavMenu__ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.m-subNavMenu__item {
+  padding: 0;
+}
+
+.m-subNavMenu__link {
+  display: block;
+  padding: 10px 20px;
+  color: var(--header-navy);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.m-subNavMenu__link:hover {
+  background-color: #f0f5fb;
+  color: var(--header-blue);
+}
+
+/* ============================================================
+   CTA button
+   ============================================================ */
+.a-button.insurance {
+background-color: transparent;
+    color: #db3907;
+
+    border: 2px solid #db3907;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    position: relative;
+}
+
+/* ============================================================
+   Mobile hamburger
+   ============================================================ */
+.a-menuMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.a-menuMobile__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--header-navy);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+/* X when open */
+.a-menuMobile[aria-expanded='true'] .a-menuMobile__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.a-menuMobile[aria-expanded='true'] .a-menuMobile__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.a-menuMobile[aria-expanded='true'] .a-menuMobile__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   Mobile nav overlay
+   ============================================================ */
+@media (width < 1024px) {
+  .o-mainHeader__mastHead {
+    display: none;
+  }
+
+  .m-primaryNavMenu {
+    display: block;
+    position: fixed;
+    top: var(--header-content-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+  }
+
+  .m-primaryNavMenu.-open {
+    transform: translateX(0);
+  }
+
+  .m-primaryNavMenu__ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    height: auto;
+    padding: 8px 0;
+  }
+
+  .m-primaryNavMenu__item {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .m-primaryNavMenu__link {
+    height: auto;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-bottom: none;
+  }
+
+  .m-primaryNavMenu__item.-hasSubmenu > .m-primaryNavMenu__link::after {
+    margin-left: auto;
+  }
+
+  /* Mobile submenu — inline, not absolute */
+  .m-subNavMenu {
+    display: none;
+    position: static;
+    box-shadow: none;
+    border-top: none;
+    border-left: 3px solid var(--header-blue);
+    margin: 0 0 8px 24px;
+    background-color: #f8fafd;
+  }
+
+  .m-primaryNavMenu__item[aria-expanded='true'] > .m-subNavMenu {
+    display: block;
+  }
+
+  /* On mobile, toggle submenu on tap of the parent item */
+  .m-primaryNavMenu__item.-hasSubmenu {
+    cursor: pointer;
+  }
+
+  .a-button.-colorCtaPrimary {
+    display: none;
+  }
+}
+
+/* ============================================================
+   Desktop — hide hamburger, show nav
+   ============================================================ */
+@media (width >= 1024px) {
+  .a-menuMobile {
+    display: none;
+  }
+
+  .m-primaryNavMenu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
