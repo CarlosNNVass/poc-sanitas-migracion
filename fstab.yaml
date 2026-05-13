@@ -1,6 +1,6 @@
 mountpoints:
   /:
-    url: "https://author-p124261-e1339088.adobeaemcloud.com/bin/franklin.delivery/jmvass/sanitas-poc/test-migracion"
+    url: "https://author-p124261-e1339088.adobeaemcloud.com/bin/franklin.delivery/CarlosNNVass/poc-sanitas-migracion/main"
     type: "markup"
     suffix: ".html"
    
