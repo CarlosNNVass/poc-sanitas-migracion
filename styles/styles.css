@@ -287,7 +287,9 @@ iframe {
   width: 100%;
   height: 100%;
 }
-
+main{
+  margin-top: 48px;
+}
 
 main > div {
   margin: 40px 16px;
@@ -324,6 +326,8 @@ padding: 1.4rem;
     position: relative;
     display: flex;
     gap: 1rem;
+    width: fit-content;
+    margin: auto;
 }
 .button:hover{
   background-color: #00558c;
@@ -393,11 +397,14 @@ main > .section:first-of-type {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
+    background-color: #F2F8FC !important;
   padding: 40px 0;
 }
+.highlight-sand{
+  padding: 40px 0;
 
+  background-color: #F7F5F2 !important;
+}
 
 [class*="icon__"] {
   -moz-osx-font-smoothing: grayscale;
@@ -411,11 +418,27 @@ main .section.highlight {
   text-transform: none;
   position: relative;
 }
-
+.banner-section .promotion-banner-wrapper{
+  margin-left: auto!important;
+}
 .banner-section{
   position: relative;
   min-height: 667px;
   padding-bottom: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.banner-section .form-wrapper{
+  display: none;
+}
+@media (min-width:992px) {
+  .banner-section .form-wrapper{
+    display: block;
+  }
+}
+
+.banner-section .form-wrapper{
+        margin-left: 8.33333%!important;
 }
 @media (min-width: 40em) {
     .banner-section {
@@ -427,18 +450,131 @@ main .section.highlight {
     .banner-section {
         padding-top: 4rem !important;
         padding-bottom: 4rem !important;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
     }
 }
-.banner-section > .default-content-wrapper:first-child img{
+.banner-section > *:not(:first-child) {
+  margin: 0;
+  align-self: start;
+  justify-self: start;
+}
+.banner-section > *:first-child {
+  position: absolute;
+  inset: 0;
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.banner-section > *:first-child img{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-    object-position: center center;
-  z-index: -1;
+  object-position: center center;
 }
 .banner-section .block{
   max-width: 467px;
+}
+.section.text-left, .section.text-left p, .section.text-left .default-content-wrapper{
+  text-align: left!important;
+}
+.section.full-width > div{
+  max-width: initial!important;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+dialog::backdrop{
+  opacity: .9;
+      transition-timing-function: cubic-bezier(.22, .61, .36, 1);
+  background: #1e1e1e;
+    -webkit-transition-duration: inherit;
+    transition-duration: inherit;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: cubic-bezier(.47, 0, .74, .71);
+    transition-timing-function: cubic-bezier(.47, 0, .74, .71);
+}
+dialog{
+      border-radius: 1.6rem !important;
+      border: none;
+      padding-top: 20px;
+
+}
+.modal-dialog-close{
+    cursor: pointer;
+    display: block;
+    width: 0;
+    border: 30px solid transparent;
+    height: 30px;
+    border-top-color: #0079c8;
+    border-right-color: #0079c8;
+    position: absolute;
+    z-index: 8050;
+    top: 0;
+    right: 0;
+    background: transparent;
+      border: none !important;
+    width: 5.6rem !important;
+    height: 5.6rem !important;
+  }
+  .modal-dialog-close::before{
+background: #111C24 !important;
+    width: 2.4rem !important;
+    height: 0.15rem !important;
+    top: 3rem !important;
+    right: 1.2rem !important;
+        content: "";
+    background: #fff;
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    border-radius: 3px;
+    top: -15px;
+    right: -25px;
+            width: 32px;
+        height: 5px;
+        border-radius: 5px;
+        top: -34px;
+        right: -48px;
+            -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+    .modal-dialog-close::after{
+        background: #111C24 !important;
+    width: 2.4rem !important;
+    height: 0.15rem !important;
+    top: 3rem !important;
+    right: 1.2rem !important;
+    content: "";
+    background: #fff;
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    border-radius: 3px;
+    top: -15px;
+    right: -25px;
+    width: 32px;
+        height: 5px;
+        border-radius: 5px;
+        top: -34px;
+        right: -48px;
+        -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+  
+dialog{
+  max-width: 546px !important;
+  padding-top: 38px;
+
+}
+dialog::-webkit-scrollbar {
+  display: none;
 }

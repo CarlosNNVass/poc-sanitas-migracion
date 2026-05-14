@@ -1,0 +1,199 @@
+.insurances-comparator.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2.4rem 0;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .insurances-comparator.block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .insurances-comparator.block {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Plan card ── */
+.insurance-plan {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* ── Header cells (dark blue) ── */
+.insurance-plan__name,
+.insurance-plan__desc,
+.insurance-plan__copago {
+  background-color: #0d1846;
+  color: #fff;
+  padding: 0 1.6rem;
+}
+
+.insurance-plan__plan-icon {
+  display: block;
+  font-family: bupaicons_ds;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.insurance-plan__plan-icon--video::before    { content: "\ea73"; }
+.insurance-plan__plan-icon--urgency::before  { content: "\ea08"; }
+.insurance-plan__plan-icon--specialty::before{ content: "\ea0b"; }
+.insurance-plan__plan-icon--check::before    { content: "\e9f0"; }
+.insurance-plan__plan-icon--lab::before      { content: "\ea1a"; }
+.insurance-plan__plan-icon--dental::before   { content: "\ea35"; }
+.insurance-plan__plan-icon--mental::before   { content: "\ea2f"; }
+.insurance-plan__plan-icon--hospital::before { content: "\ea0a"; }
+
+.insurance-plan__icon-raw {
+  display: none;
+}
+
+.insurance-plan__name {
+  padding-top: 1.6rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.insurance-plan__name p { margin: 0; color: #fff; }
+
+.insurance-plan__desc {
+  padding-top: 0.8rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.insurance-plan__desc p { margin: 0; color: #fff; }
+
+.insurance-plan__copago {
+  padding-top: 0.8rem;
+  padding-bottom: 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.insurance-plan__copago p { margin: 0; color: #fff; }
+
+/* ── Promotion cell (green) ── */
+.insurance-plan__promo {
+  background-color: #1a6e37;
+  color: #fff;
+  padding: 1rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.insurance-plan__promo p { margin: 0; color: #fff; }
+
+/* ── CTA cell ── */
+.insurance-plan__cta-cell {
+  padding: 1.6rem;
+}
+
+.insurance-plan__btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem 2rem;
+  background-color: #0079c8;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.insurance-plan__btn:hover {
+  background-color: #00558c;
+  color: #fff;
+}
+
+/* ── Raw CTA link (data only) ── */
+.insurance-plan__cta-link-raw {
+  display: none;
+}
+
+/* ── Features cell ── */
+.insurance-plan__features {
+  flex: 1;
+  padding: 0 1.6rem 1.6rem;
+}
+
+.insurance-plan__features ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.insurance-plan__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid #dde1e6;
+}
+
+.insurance-plan__feature-icon {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-family: bupaicons_ds;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: #0079c8;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.2rem;
+}
+
+.insurance-plan__feature-icon--video::before    { content: "\ea73"; }
+.insurance-plan__feature-icon--urgency::before  { content: "\ea08"; }
+.insurance-plan__feature-icon--specialty::before{ content: "\ea0b"; }
+.insurance-plan__feature-icon--check::before    { content: "\e9f0"; }
+.insurance-plan__feature-icon--lab::before      { content: "\ea1a"; }
+.insurance-plan__feature-icon--dental::before   { content: "\ea35"; }
+.insurance-plan__feature-icon--mental::before   { content: "\ea2f"; }
+.insurance-plan__feature-icon--hospital::before { content: "\ea0a"; }
+.insurance-plan__feature-icon--default::before  { content: "\e9f0"; }
+
+.insurance-plan__feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.insurance-plan__feature-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #21272a;
+  line-height: 1.3;
+}
+
+.insurance-plan__feature-desc {
+  font-size: 1.3rem;
+  color: #4e5357;
+  line-height: 1.4;
+}

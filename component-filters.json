@@ -22,13 +22,27 @@
       "infocards",
       "promotion-banner",
       "form",
-      "service-cards"
+      "service-cards",
+      "background-cards",
+      "alert",
+      "video",
+      "clients-data",
+      "filtered-insurances",
+      "featured-cards",
+      "contact",
+      "insurances-comparator"
     ]
   },
   {
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "background-cards",
+    "components": [
+      "background-card"
     ]
   },
   {
@@ -59,6 +73,18 @@
     ]
   },
   {
+    "id": "contact",
+    "components": [
+      "contact-item"
+    ]
+  },
+  {
+    "id": "featured-cards",
+    "components": [
+      "featured-card-item"
+    ]
+  },
+  {
     "id": "form",
     "components": [
       "form-field"
@@ -68,6 +94,12 @@
     "id": "infocards",
     "components": [
       "infocard-item"
+    ]
+  },
+  {
+    "id": "insurances-comparator",
+    "components": [
+      "insurance-plan"
     ]
   },
   {

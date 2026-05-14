@@ -1,0 +1,148 @@
+.featured-cards.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.4rem;
+  padding: 2.4rem 0;
+}
+
+@media (min-width: 768px) {
+  .featured-cards.block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .featured-cards.block {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card */
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 0.4rem;
+  overflow: hidden;
+box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Media */
+.featured-card__media {
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-card__media img,
+.featured-card__media picture {
+  display: block;
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+}
+
+.featured-card__media picture img {
+  height: 100%;
+}
+
+/* Tag (visual overlay injected inside media cell) */
+.featured-card__tag {
+position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #0D1846;
+    color: #fff;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 0.1px;
+    display: inline-flex;
+    padding: 2px 8px;
+    border-radius: 4px;
+    align-items: center;
+        background: #fff;
+    color: #000000;
+}
+
+/* Tag cell (data only, hidden) */
+.featured-card__tag-cell {
+  display: none;
+}
+
+/* Title */
+.featured-card__title {
+  text-align: center;
+  padding: 2rem 2rem 0;
+  flex-shrink: 0;
+}
+
+.featured-card__title,
+.featured-card__title h1,
+.featured-card__title h2,
+.featured-card__title h3,
+.featured-card__title h4 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  color: #0d1846;
+}
+
+/* Description */
+.featured-card__desc p {
+  flex: 1;
+  padding: 1rem 2rem 0;
+  font-size: 16px;
+  line-height: 2rem;
+      color: #4E5357 !important;
+  text-align: center;
+}
+
+.featured-card__desc p {
+  margin: 0;
+}
+
+/* Footer / link */
+.featured-card__footer {
+  padding: 1rem 2rem 1.6rem;
+  margin-top: auto;
+}
+
+.featured-card__footer p {
+  margin: 0;
+}
+
+.featured-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #006dae;
+  text-decoration: none;
+  border-top: 1px solid #DDE1E6;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding-top: 1.5rem;
+  align-items: center;
+}
+
+.featured-card__link::after {
+-webkit-font-smoothing: antialiased;
+    font-family: bupaicons_ds;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    content: "\ec09";
+}
+
+.featured-card__link:hover span {
+  text-decoration: underline;
+}

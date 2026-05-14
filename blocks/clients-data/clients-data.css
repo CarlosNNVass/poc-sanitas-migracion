@@ -1,0 +1,183 @@
+.clients-data.block {
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* ── Wrapper: map background + cards overlay ── */
+.clients-data__wrapper {
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ── Image background ── */
+.clients-data__map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.clients-data__map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Cards container ── */
+.clients-data__cards {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+@media (width >= 768px) {
+  .clients-data__wrapper {
+    min-height: 160px;
+  }
+
+  .clients-data__cards {
+    flex-direction: row;
+    max-width: 860px;
+    margin: auto;
+    gap: 32px;
+  }
+}
+
+/* ── Base card ── */
+.clients-data__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 28px;
+  gap: 12px;
+      opacity: .9;
+
+}
+
+/* ── Info card (dark navy) ── */
+.clients-data__card--info {
+  margin: 4px 0;
+background-color: #0079c8 !important;
+  color: #fff;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+@media (width >= 768px) {
+  .clients-data__card--info {
+    flex-basis: 280px;
+  }
+}
+
+.clients-data__card-icon {
+  display: block;
+  line-height: 0;
+  color: #fff;
+}
+
+.clients-data__card-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.clients-data__card-text {
+  color: #fff;
+}
+
+.clients-data__card-text p {
+  margin: 0;
+  color: #fff;
+line-height: 30px;
+font-size: 20px;
+}
+
+/* ── Client card (Sanitas blue) ── */
+.clients-data__card--client {
+  height: 128px;
+  border-radius: 0.4rem !important;
+  background-color: #0079c8;
+  color: #fff;
+  flex: 1;
+}
+
+/* ── Non-client card (white) ── */
+.clients-data__card--nonclient {
+    height: 128px;
+  border-radius: 0.4rem !important;
+  background-color: #fff;
+  color: #21272a;
+  flex: 1;
+}
+
+/* ── Card titles ── */
+.clients-data__card-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: inherit;
+}
+
+.clients-data__card--client .clients-data__card-title {
+  color: #fff;
+}
+
+.clients-data__card--nonclient .clients-data__card-title {
+  color: #21272a;
+}
+
+/* ── CTA buttons ── */
+.clients-data__card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.clients-data__card--client .clients-data__card-btn {
+  border: 1.5px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.clients-data__card--client .clients-data__card-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.clients-data__card--nonclient .clients-data__card-btn {
+  border: 1.5px solid #21272a;
+  color: #21272a;
+  background: transparent;
+}
+
+.clients-data__card--nonclient .clients-data__card-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* ── Button icon ── */
+.clients-data__btn-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.clients-data__btn-icon svg {
+  width: 18px;
+  height: 18px;
+}

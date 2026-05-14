@@ -1,4 +1,11 @@
 export default function decorate(block) {
+  block.querySelectorAll('a.button').forEach((a) => {
+    a.classList.remove('button', 'primary', 'secondary');
+    if (a.parentElement?.classList.contains('button-container')) {
+      a.parentElement.classList.remove('button-container');
+    }
+  });
+
   [...block.children].forEach((row) => {
     row.classList.add('service-card');
 

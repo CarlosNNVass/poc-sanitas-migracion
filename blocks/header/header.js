@@ -29,6 +29,8 @@ function buildMasthead(section) {
   const actions = document.createElement('div');
   actions.className = 'm-mastHead__actions';
   actions.innerHTML = `
+    <a class="m-mastHead__call" href="/mi-sanitas"></a>
+    <a class="m-mastHead__search" href="/mi-sanitas"></a>
     <a class="m-mastHead__login" href="/mi-sanitas">
       <i class="a-icon__userSolid" aria-hidden="true"></i>
       <span>Mi Sanitas</span>

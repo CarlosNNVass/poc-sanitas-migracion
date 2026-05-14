@@ -214,3 +214,32 @@
   outline: 2px solid #2563eb;
   outline-offset: 2px;
 }
+
+/* Card expandable */
+.opinions-item.is-expandable {
+  cursor: pointer;
+}
+
+.opinions-item.is-expandable .opinions-body::after {
+  content: 'Leer más';
+  display: block;
+  margin-top: 6px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Modal body */
+.opinions-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.opinions-modal-body .opinions-body {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  display: block;
+}

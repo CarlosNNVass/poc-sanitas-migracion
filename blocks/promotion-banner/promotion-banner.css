@@ -9,10 +9,7 @@
 overflow: hidden;
 
 }
-.promotion-banner-wrapper{
-padding-bottom: calc(2.27273vw + 1.74545rem) !important;
-padding-top: calc(2.27273vw + 1.74545rem) !important;
-}
+
 .promotion-banner-row {
   padding-left: 1.6rem !important;
     padding-right: 1.6rem !important;
@@ -71,9 +68,37 @@ backdrop-filter: blur(8px);
         padding-bottom: 2.4rem !important;
     }
 }
-.promotion-banner-title  {
-
+.promotion-banner-title  p{
+    color: #0D1846;
+    font-weight: 700;
+    letter-spacing: normal;
+        margin: 0 !important;
     
+}
+@media (min-width: 48em) {
+    .promotion-banner-title  p {
+        line-height: 3.6rem;
+    }
+}
+@media (min-width: 62em) {
+    .promotion-banner-title  p {
+        font-size: 3rem;
+    }
+}
+
+.promotion-banner-body p{
+        font-weight: 700;
+    letter-spacing: normal;
+}
+@media (min-width: 48em) {
+    .promotion-banner-body p {
+        line-height: 4rem;
+    }
+}
+@media (min-width: 62em) {
+   .promotion-banner-body p{
+        font-size: 3.4rem;
+    }
 }
 .promotion-banner-row:not(:first-child) p{
     color: #fff;
@@ -123,14 +148,15 @@ backdrop-filter: blur(8px);
   border-radius: 999px;
   border: none;
   color: #fff!important;
-  text-decoration: underline!important;
   background: transparent;
   color: #0050b3;
   font-weight: 600;
   text-decoration: none;
 
 }
-
+.promotion-banner-button span{
+    text-decoration: underline;
+}
 .promotion-banner .button:hover,
 .promotion-banner-button:hover {
   background: transparent;

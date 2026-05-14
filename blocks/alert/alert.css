@@ -1,0 +1,120 @@
+.alert.block {
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+/* ===============================
+   Contenedor interior
+   =============================== */
+.alert-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+          padding: 0.8rem !important;
+          text-align: center;
+    background-color: #F7F7F9 !important;
+    color: #21272a;
+  border-radius: 0.4rem;
+  border: 1px solid #DDE1E6 ;
+}
+.alert-inner .button{
+  margin: 0;
+}
+/* ===============================
+   Icono
+   =============================== */
+.alert-icon {
+  flex-shrink: 0;
+  font-family: bupaicons_ds;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: #0d1846;
+  -webkit-font-smoothing: antialiased;
+}
+
+.alert-icon--compra::before   { content: "\e999"; }
+.alert-icon--muela::before    { content: "\eb72"; }
+.alert-icon--internet::before { content: "\eb45"; }
+
+/* ===============================
+   Contenido
+   =============================== */
+.alert-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1;
+}
+.alert-content .button{
+  max-height: 50px;
+  height: 100%;
+}
+
+.alert-text {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  color: #0d1846;
+}
+
+.alert-text p {
+  margin: 0;
+  color: inherit;
+}
+
+.alert-text a {
+  color: #0079c8;
+  text-decoration: underline;
+}
+
+/* ===============================
+   Botón
+   =============================== */
+.alert-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 0.8rem 1.6rem;
+  background-color: #0079c8;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease;
+}
+
+.alert-btn:hover {
+  background-color: #00558c;
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (min-width: 40em) {
+  .alert-text {
+    font-size: calc(0.56818vw + 0.93636rem);
+  }
+}
+
+@media (min-width: 62em) {
+  .alert-text {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 992px) {
+  .alert-inner {
+  flex-direction: row;
+
+  }
+  .alert-content {
+  flex-direction: row;
+
+  }
+}

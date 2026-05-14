@@ -20,7 +20,12 @@ export default function decorate(block) {
   const link = linkRow && linkRow.querySelector('a');
   if (link) {
     const labelText = buttonLabelRow && buttonLabelRow.textContent.trim();
-    if (labelText) link.textContent = labelText;
+    if (labelText) {
+        const span = document.createElement('span')
+        span.textContent = labelText
+        link.textContent = null
+        link.appendChild(span)
+    };
     link.classList.add('promotion-banner-button');
     linkRow.classList.add('promotion-banner-cta');
     if (buttonLabelRow) buttonLabelRow.remove();

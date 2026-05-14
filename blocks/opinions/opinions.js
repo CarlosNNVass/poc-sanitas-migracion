@@ -1,26 +1,49 @@
+import { createModal } from '../../scripts/modal.js';
+
+function openOpinionModal(item) {
+  const name = item.querySelector('.opinions-name')?.textContent || '';
+  const starsClone = item.querySelector('.opinions-stars')?.cloneNode(true);
+  const dateText = item.querySelector('.opinions-date')?.textContent || '';
+  const bodyClone = item.querySelector('.opinions-body')?.cloneNode(true);
+
+  if (bodyClone) {
+    bodyClone.style.cssText = '-webkit-line-clamp: unset; overflow: visible; display: block;';
+  }
+
+  const dateEl = document.createElement('div');
+  dateEl.className = 'opinions-date';
+  dateEl.textContent = dateText;
+
+  const content = document.createElement('div');
+  content.className = 'opinions-modal-body';
+  content.append(dateEl);
+  if (starsClone) content.append(starsClone);
+  if (bodyClone) content.append(bodyClone);
+
+  const dialog = createModal(name || 'Opinión', content);
+  dialog.addEventListener('close', () => dialog.remove());
+  document.body.append(dialog);
+  dialog.showModal();
+}
+
 export default function decorate(block) {
   block.classList.add('opinions');
 
   const items = [...block.children];
   if (!items.length) return;
 
-  // Wrapper para track + controles
   const wrapper = document.createElement('div');
   wrapper.classList.add('opinions-wrapper');
 
   const track = document.createElement('div');
   track.classList.add('opinions-track');
 
-  // Procesar cada item
   items.forEach((item) => {
     item.classList.add('opinions-item');
 
     const cells = [...item.children];
     if (!cells.length) return;
 
-    // Detectar estructura: con o sin nombre
-    // Con nombre: [name, date, stars, text]
-    // Sin nombre: [date, stars, text]
     let nameCell = null;
     let dateCell;
     let starsCell;
@@ -32,7 +55,6 @@ export default function decorate(block) {
       [dateCell, starsCell, textCell] = cells;
     }
 
-    // Crear estructura visual: header (nombre + fecha) / estrellas / texto
     const header = document.createElement('div');
     header.classList.add('opinions-header');
 
@@ -46,7 +68,6 @@ export default function decorate(block) {
 
     header.append(name, date);
 
-    // Estrellas
     const stars = document.createElement('div');
     stars.classList.add('opinions-stars');
     const rawStars = starsCell ? starsCell.textContent.trim() : '0';
@@ -63,21 +84,25 @@ export default function decorate(block) {
       stars.append(star);
     }
 
-    // Cuerpo del texto
     const body = document.createElement('div');
     body.classList.add('opinions-body');
     if (textCell) {
       body.innerHTML = textCell.innerHTML;
     }
 
-    // Limpiar y reconstruir el item
     item.replaceChildren(header, stars, body);
+
+    item.addEventListener('click', () => {
+      if (body.scrollHeight > body.clientHeight) {
+        openOpinionModal(item);
+      }
+    });
+
     track.append(item);
   });
 
   wrapper.append(track);
 
-  // Flechas
   const prevBtn = document.createElement('button');
   prevBtn.type = 'button';
   prevBtn.classList.add('opinions-arrow', 'opinions-arrow-prev');
@@ -90,7 +115,6 @@ export default function decorate(block) {
   nextBtn.setAttribute('aria-label', 'Siguiente');
   nextBtn.innerHTML = '<span aria-hidden="true">›</span>';
 
-  // Dots (se generan dinámicamente según páginas)
   const dotsContainer = document.createElement('div');
   dotsContainer.classList.add('opinions-dots');
   dotsContainer.setAttribute('role', 'tablist');
@@ -98,7 +122,6 @@ export default function decorate(block) {
   wrapper.append(prevBtn, nextBtn, dotsContainer);
   block.replaceChildren(wrapper);
 
-  // ---------- Lógica del carrusel por páginas ----------
   const itemsArray = [...track.children];
   let currentPage = 0;
   let dotButtons = [];
@@ -111,6 +134,20 @@ export default function decorate(block) {
   };
 
   const getTotalPages = () => Math.ceil(itemsArray.length / getItemsPerPage());
+
+  const updateControls = () => {
+    const needsNav = getTotalPages() > 1;
+    prevBtn.hidden = !needsNav;
+    nextBtn.hidden = !needsNav;
+    dotsContainer.hidden = !needsNav;
+  };
+
+  const checkExpandable = () => {
+    itemsArray.forEach((item) => {
+      const body = item.querySelector('.opinions-body');
+      item.classList.toggle('is-expandable', !!body && body.scrollHeight > body.clientHeight);
+    });
+  };
 
   const buildDots = () => {
     dotsContainer.replaceChildren();
@@ -131,6 +168,8 @@ export default function decorate(block) {
       dotsContainer.append(dot);
       dotButtons.push(dot);
     }
+
+    updateControls();
   };
 
   const updateActivePage = (pageIndex) => {
@@ -142,6 +181,7 @@ export default function decorate(block) {
     });
   };
 
+  // eslint-disable-next-line no-use-before-define
   const goToPage = (pageIndex) => {
     const totalPages = getTotalPages();
     const safePage = ((pageIndex % totalPages) + totalPages) % totalPages;
@@ -159,7 +199,6 @@ export default function decorate(block) {
   prevBtn.addEventListener('click', () => goToPage(currentPage - 1));
   nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
 
-  // Sincronizar página al hacer swipe / scroll manual
   let scrollTimeout = null;
   track.addEventListener('scroll', () => {
     if (scrollTimeout) clearTimeout(scrollTimeout);
@@ -173,7 +212,6 @@ export default function decorate(block) {
     }, 100);
   });
 
-  // Teclado
   wrapper.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') {
       e.preventDefault();
@@ -184,7 +222,6 @@ export default function decorate(block) {
     }
   });
 
-  // Recalcular dots al redimensionar
   let resizeTimeout = null;
   window.addEventListener('resize', () => {
     if (resizeTimeout) clearTimeout(resizeTimeout);
@@ -193,8 +230,10 @@ export default function decorate(block) {
       if (currentPage >= totalPages) currentPage = totalPages - 1;
       buildDots();
       goToPage(currentPage);
+      checkExpandable();
     }, 150);
   });
 
   buildDots();
+  requestAnimationFrame(checkExpandable);
 }

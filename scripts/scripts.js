@@ -11,6 +11,7 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+import { openModal } from './modal.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -138,10 +139,25 @@ function loadDelayed() {
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
 }
+function processModal(){
 
+  document.querySelectorAll('a').forEach(link => {
+    if(link.href.includes('fragments')){
+      link.addEventListener('click',async  (e) => {
+        e.preventDefault()
+        const tooltipPath = link.href.replaceAll('/content/sanitas-poc', '')
+        console.log('abriendo', tooltipPath)
+        await openModal(tooltipPath)
+      })
+    }
+  })
+}
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
+  processModal()
+
+
   loadDelayed();
 }
 

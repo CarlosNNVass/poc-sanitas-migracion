@@ -1,0 +1,107 @@
+{
+  "definitions": [
+    {
+      "title": "Insurances comparator",
+      "id": "insurances-comparator",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Insurances comparator",
+              "model": "insurances-comparator",
+              "filter": "insurances-comparator"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Insurance plan",
+      "id": "insurance-plan",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Insurance plan",
+              "model": "insurance-plan"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "insurances-comparator",
+      "fields": []
+    },
+    {
+      "id": "insurance-plan",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "name",
+          "value": "",
+          "label": "Nombre del seguro"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "value": "",
+          "label": "Descripción"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "copago",
+          "value": "",
+          "label": "Copago"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "promotion",
+          "value": "",
+          "label": "Oferta / Promoción"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaText",
+          "value": "Calcular mi seguro",
+          "label": "Texto del botón"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "ctaLink",
+          "label": "Enlace del botón"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "features",
+          "value": "",
+          "label": "Prestaciones — cada ítem: [icono] Título en negrita descripción (iconos: video, urgency, specialty, check, lab, dental, mental, hospital)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "icon",
+          "value": "",
+          "label": "Icono del plan (video, urgency, specialty, check, lab, dental, mental, hospital)"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "insurances-comparator",
+      "components": ["insurance-plan"]
+    }
+  ]
+}

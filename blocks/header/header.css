@@ -2,7 +2,7 @@
    Header variables
    ============================================================ */
 :root {
-  --header-navy: #003057;
+  --header-navy: #0D1846;
   --header-blue: #006eb8;
   --header-masthead-height: 40px;
   --header-content-height: 72px;
@@ -33,10 +33,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 24px;
   margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
+  height: 40px;
 }
 
 /* Tabs: Particulares | Empresas */
@@ -97,16 +97,54 @@
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
+      background-color: #0079c8;
+    color: #ffffff;
+  height: 40px!important;
+      padding: 0.8rem;
+
 }
 
-.m-mastHead__login:hover {
-  color: rgb(255 255 255 / 80%);
-}
 
-.m-mastHead__login i {
-  font-size: 16px;
-}
 
+.m-mastHead__login i::before {
+      content: "\ea9f";
+-webkit-font-smoothing: antialiased;
+    font-family: bupaicons_ds;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+        font-size: 2em;
+}
+.m-mastHead__call::before{
+        content: "\ea58";
+-webkit-font-smoothing: antialiased;
+    font-family: bupaicons_ds;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+        font-size: 2.4rem;
+
+        color: #fff;
+}
+.m-mastHead__search::before{
+  -webkit-font-smoothing: antialiased;
+    font-family: bupaicons_ds;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    color: #fff;
+        content: "\ea35";
+        font-size: 2em;
+}
 /* ============================================================
    Content header — logo + nav + cta
    ============================================================ */
@@ -121,6 +159,8 @@
   width: 100%;
   gap: 24px;
   position: relative;
+  padding-top: 1.8rem;
+
 }
 
 /* ============================================================
@@ -159,7 +199,7 @@
 
 .m-primaryNavMenu__item {
   position: relative;
-  height: var(--header-content-height);
+  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -173,7 +213,6 @@
   text-decoration: none;
   font-size: 15px;
   white-space: nowrap;
-  border-bottom: 3px solid transparent;
   box-sizing: border-box;
   font-size: 12px;
 }

@@ -430,6 +430,7 @@ function wrapTextNodes(block) {
  */
 function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
+    if(!a.querySelector('sub')){
     a.title = a.title || a.textContent;
     if (a.href !== a.textContent) {
       const up = a.parentElement;
@@ -459,6 +460,8 @@ function decorateButtons(element) {
         }
       }
     }
+    }
+
   });
 }
 

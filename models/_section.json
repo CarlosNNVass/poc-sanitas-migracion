@@ -31,12 +31,24 @@
           "label": "Style",
           "options": [
             {
-              "name": "Highlight",
+              "name": "Highlight Blue",
               "value": "highlight"
+            },
+            {
+              "name": "Highlight Sand",
+              "value": "highlight sand"
+            },
+            {
+              "name": "Full width",
+              "value": "full-width"
             },
             {
               "name": "Banner",
               "value": "banner-section"
+            },
+                        {
+              "name": "Left text",
+              "value": "text-left"
             }
           ]
         }
@@ -61,7 +73,15 @@
         "infocards",
         "promotion-banner",
         "form",
-        "service-cards"
+        "service-cards",
+        "background-cards",
+        "alert",
+        "video",
+        "clients-data",
+        "filtered-insurances",
+        "featured-cards",
+        "contact",
+        "insurances-comparator"
       ]
     }
   ]

@@ -9,6 +9,7 @@
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Form",
+              "model": "form",
               "filter": "form"
             }
           }
@@ -35,11 +36,40 @@
     {
       "id": "form",
       "fields": [
-              {
-        "component": "text",
-        "name": "submitLabel",
-        "label": "Submit label"
-      }
+        {
+          "component": "text",
+          "name": "titulo",
+          "label": "Título"
+        },
+        {
+          "component": "text",
+          "name": "subtitulo",
+          "label": "Subtítulo"
+        },
+                {
+          "component": "richtext",
+          "name": "textbeforesubmit",
+          "label": "Text before submit",
+          "valueType": "string"
+
+        },
+        {
+          "component": "text",
+          "name": "submit",
+          "label": "Submit"
+        },
+        {
+          "valueType": "string",
+          "component": "richtext",
+          "name": "subtext",
+          "label": "Subtext"
+        },
+        {
+          "component": "richtext",
+          "name": "subalert",
+          "label": "Subalert",
+          "valueType": "string"
+        }
       ]
     },
     {
@@ -64,6 +94,7 @@
           { "name": "Text", "value": "text" },
           { "name": "Email", "value": "email" },
           { "name": "Phone", "value": "tel" },
+          { "name": "Birthday", "value": "birthday" },
           { "name": "Select", "value": "select" },
           { "name": "Checkbox", "value": "checkbox" }
         ]
@@ -94,6 +125,22 @@
         "name": "modalTitle",
         "label": "Title of the modal",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "placeholder",
+        "label": "Placeholder"
+      },
+      {
+        "component": "select",
+        "name": "icon",
+        "label": "Icon",
+        "options": [
+          { "name": "None", "value": "" },
+          { "name": "Personas", "value": "personas" },
+          { "name": "CP", "value": "cp" },
+          { "name": "Tel", "value": "tel" }
+        ]
       }
     ]
     }

@@ -134,12 +134,24 @@
         "label": "Style",
         "options": [
           {
-            "name": "Highlight",
+            "name": "Highlight Blue",
             "value": "highlight"
+          },
+          {
+            "name": "Highlight Sand",
+            "value": "highlight sand"
+          },
+          {
+            "name": "Full width",
+            "value": "full-width"
           },
           {
             "name": "Banner",
             "value": "banner-section"
+          },
+          {
+            "name": "Left text",
+            "value": "text-left"
           }
         ]
       }
@@ -165,6 +177,96 @@
         "name": "content",
         "value": "",
         "label": "Content"
+      }
+    ]
+  },
+  {
+    "id": "alert",
+    "fields": [
+      {
+        "component": "select",
+        "name": "icon",
+        "label": "Icon",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Compra",
+            "value": "compra"
+          },
+          {
+            "name": "Muela",
+            "value": "muela"
+          },
+          {
+            "name": "Internet",
+            "value": "internet"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "buttonText",
+        "label": "Button text"
+      },
+      {
+        "component": "aem-content",
+        "name": "buttonLink",
+        "label": "Button link"
+      }
+    ]
+  },
+  {
+    "id": "background-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "value": "",
+        "label": "Date"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "value": "",
+        "label": "Description"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "value": "Leer más",
+        "label": "Link text"
       }
     ]
   },
@@ -258,6 +360,62 @@
     ]
   },
   {
+    "id": "clients-data",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "infoText",
+        "value": "",
+        "label": "Info Card Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "clientTitle",
+        "value": "Soy cliente",
+        "label": "Client Card Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "clientBtnText",
+        "value": "Ver mi cuadro médico",
+        "label": "Client Button Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "clientLink",
+        "label": "Client Card Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "nonClientTitle",
+        "value": "No soy cliente",
+        "label": "Non-Client Card Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "nonClientBtnText",
+        "value": "Cuadro médico general",
+        "label": "Non-Client Button Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "nonClientLink",
+        "label": "Non-Client Card Link"
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
@@ -277,12 +435,141 @@
     ]
   },
   {
+    "id": "contact",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tag",
+        "value": "Te puede interesar",
+        "label": "Tag"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Título"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "subtitle",
+        "value": "",
+        "label": "Subtítulo"
+      }
+    ]
+  },
+  {
+    "id": "contact-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "icon",
+        "value": "",
+        "label": "Icono (phone, email, chat, location, calendar, doctor)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttonText",
+        "value": "",
+        "label": "Texto del botón"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "buttonLink",
+        "label": "Enlace del botón"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Texto informativo"
+      }
+    ]
+  },
+  {
+    "id": "featured-card-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tag",
+        "value": "",
+        "label": "Tag"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "value": "",
+        "label": "Description"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link"
+      }
+    ]
+  },
+  {
+    "id": "filtered-insurances",
+    "fields": []
+  },
+  {
     "id": "form",
     "fields": [
       {
         "component": "text",
-        "name": "submitLabel",
-        "label": "Submit label"
+        "name": "titulo",
+        "label": "Título"
+      },
+      {
+        "component": "text",
+        "name": "subtitulo",
+        "label": "Subtítulo"
+      },
+      {
+        "component": "richtext",
+        "name": "textbeforesubmit",
+        "label": "Text before submit",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "submit",
+        "label": "Submit"
+      },
+      {
+        "valueType": "string",
+        "component": "richtext",
+        "name": "subtext",
+        "label": "Subtext"
+      },
+      {
+        "component": "richtext",
+        "name": "subalert",
+        "label": "Subalert",
+        "valueType": "string"
       }
     ]
   },
@@ -316,6 +603,10 @@
           {
             "name": "Phone",
             "value": "tel"
+          },
+          {
+            "name": "Birthday",
+            "value": "birthday"
           },
           {
             "name": "Select",
@@ -358,6 +649,34 @@
         "name": "modalTitle",
         "label": "Title of the modal",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "placeholder",
+        "label": "Placeholder"
+      },
+      {
+        "component": "select",
+        "name": "icon",
+        "label": "Icon",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Personas",
+            "value": "personas"
+          },
+          {
+            "name": "CP",
+            "value": "cp"
+          },
+          {
+            "name": "Tel",
+            "value": "tel"
+          }
+        ]
       }
     ]
   },
@@ -489,6 +808,70 @@
     ]
   },
   {
+    "id": "insurances-comparator",
+    "fields": []
+  },
+  {
+    "id": "insurance-plan",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "value": "",
+        "label": "Nombre del seguro"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "value": "",
+        "label": "Descripción"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "copago",
+        "value": "",
+        "label": "Copago"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "promotion",
+        "value": "",
+        "label": "Oferta / Promoción"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaText",
+        "value": "Calcular mi seguro",
+        "label": "Texto del botón"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "ctaLink",
+        "label": "Enlace del botón"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "features",
+        "value": "",
+        "label": "Prestaciones — cada ítem: [icono] Título en negrita descripción (iconos: video, urgency, specialty, check, lab, dental, mental, hospital)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "icon",
+        "value": "",
+        "label": "Icono del plan (video, urgency, specialty, check, lab, dental, mental, hospital)"
+      }
+    ]
+  },
+  {
     "id": "opinion-item",
     "fields": [
       {
@@ -573,7 +956,25 @@
   },
   {
     "id": "service-cards",
-    "fields": []
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Style",
+        "value": "default",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Flat",
+            "value": "flat"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "service-card-item",
@@ -590,6 +991,32 @@
         "name": "content",
         "value": "",
         "label": "Content"
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Text content (heading, description, CTA link)"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "background image (until video play)",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "video",
+        "value": "",
+        "label": "YouTube URL"
       }
     ]
   }
