@@ -37,7 +37,8 @@
       "coverage-section",
       "info-box-v2",
       "pricing-table",
-      "conditions-table"
+      "conditions-table",
+      "download-link"
     ]
   },
   {
@@ -101,6 +102,12 @@
     "id": "coverage-section",
     "components": [
       "coverage-section-item"
+    ]
+  },
+  {
+    "id": "download-link",
+    "components": [
+      "download-link-item"
     ]
   },
   {

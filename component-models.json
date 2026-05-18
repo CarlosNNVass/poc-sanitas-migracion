@@ -556,6 +556,23 @@
     ]
   },
   {
+    "id": "download-link-item",
+    "fields": [
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Link text"
+      }
+    ]
+  },
+  {
     "id": "featured-card-item",
     "fields": [
       {

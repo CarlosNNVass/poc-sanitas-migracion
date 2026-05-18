@@ -1,0 +1,27 @@
+.download-link-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.download-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 1.4rem;
+  color: #0079c8;
+}
+
+.download-link-anchor {
+  font-size: 1.5rem;
+  color: #0079c8;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.download-link-anchor:hover {
+  text-decoration: underline;
+}

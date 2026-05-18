@@ -9,23 +9,26 @@ export default function decorate(block) {
   let subtitle = '';
   const items = [];
   let callout = '';
+  let titleDone = false;
 
-  rows.forEach((row, index) => {
+  rows.forEach((row) => {
     const cells = [...row.children];
     const first = cells[0]?.innerHTML?.trim() || '';
     const firstText = cells[0]?.textContent?.trim() || '';
     const second = cells[1]?.textContent?.trim() || '';
 
-    if (index === 0 && !second) {
-      title = firstText;
-    } else if (index === 1 && !second && !firstText.startsWith('[')) {
-      subtitle = firstText;
+    if (!titleDone && !second && !firstText.startsWith('[callout]')) {
+      if (!title) {
+        title = firstText;
+      } else if (!subtitle) {
+        subtitle = firstText;
+        titleDone = true;
+      }
     } else if (firstText.startsWith('[callout]')) {
       callout = firstText.replace('[callout]', '').trim();
-    } else if (firstText && second) {
+    } else {
+      titleDone = true;
       items.push({ label: first, value: second });
-    } else if (firstText && !second && items.length > 0) {
-      items.push({ label: first, value: '' });
     }
   });
 
