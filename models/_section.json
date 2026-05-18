@@ -82,7 +82,9 @@
         "featured-cards",
         "contact",
         "insurances-comparator",
-        "promotion-banner-v2"
+        "promotion-banner-v2",
+        "accordion-v2",
+        "info-box"
       ]
     }
   ]

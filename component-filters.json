@@ -31,7 +31,15 @@
       "featured-cards",
       "contact",
       "insurances-comparator",
-      "promotion-banner-v2"
+      "promotion-banner-v2",
+      "accordion-v2",
+      "info-box"
+    ]
+  },
+  {
+    "id": "accordion-v2",
+    "components": [
+      "accordion-v2-item"
     ]
   },
   {
@@ -89,6 +97,12 @@
     "id": "form",
     "components": [
       "form-field"
+    ]
+  },
+  {
+    "id": "info-box",
+    "components": [
+      "info-box-item"
     ]
   },
   {
