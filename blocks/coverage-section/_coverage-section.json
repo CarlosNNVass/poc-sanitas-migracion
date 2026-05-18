@@ -1,0 +1,67 @@
+{
+  "definitions": [
+    {
+      "title": "Coverage section",
+      "id": "coverage-section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Coverage section",
+              "filter": "coverage-section"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Coverage section item",
+      "id": "coverage-section-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Coverage section item",
+              "model": "coverage-section-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "coverage-section-item",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "icon",
+          "label": "Icon (class or image path)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "coverage-section",
+      "components": [
+        "coverage-section-item"
+      ]
+    }
+  ]
+}

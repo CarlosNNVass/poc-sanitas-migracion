@@ -516,6 +516,29 @@
     ]
   },
   {
+    "id": "coverage-section-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon (class or image path)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "content",
+        "label": "Content"
+      }
+    ]
+  },
+  {
     "id": "featured-card-item",
     "fields": [
       {

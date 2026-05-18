@@ -1,0 +1,133 @@
+.coverage-section-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (width >= 62em) {
+  .coverage-section-layout {
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* Accordion column */
+.coverage-section-accordion {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.coverage-accordion-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.coverage-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.coverage-accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.coverage-accordion-header:hover {
+  background-color: #f9f9f9;
+}
+
+.coverage-accordion-icon {
+  font-size: 2.4rem;
+  color: #0D1846;
+  min-width: 32px;
+  text-align: center;
+}
+
+.coverage-accordion-title {
+  flex: 1;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0079c8;
+}
+
+.coverage-accordion-chevron {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.coverage-accordion-chevron::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #0079c8;
+  border-bottom: 2px solid #0079c8;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.coverage-accordion-item.is-open .coverage-accordion-chevron::after {
+  transform: rotate(-135deg);
+  top: 10px;
+}
+
+.coverage-accordion-item.is-open .coverage-accordion-title {
+  font-weight: 700;
+  color: #0D1846;
+}
+
+.coverage-accordion-panel {
+  display: none;
+  padding: 0 20px 18px 68px;
+  font-size: 1.5rem;
+  color: #4E5357;
+  line-height: 1.5;
+}
+
+.coverage-accordion-item.is-open .coverage-accordion-panel {
+  display: block;
+}
+
+/* Sidebar info cards */
+.coverage-section-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.coverage-info-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.coverage-info-icon {
+  margin-bottom: 16px;
+}
+
+.coverage-info-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.coverage-info-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0D1846;
+  margin-bottom: 8px;
+}
+
+.coverage-info-text {
+  font-size: 1.5rem;
+  color: #4E5357;
+  line-height: 1.5;
+  margin: 0;
+}
