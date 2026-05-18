@@ -1,7 +1,5 @@
 export default function decorate(block) {
   const rows = [...block.children];
-  block.innerHTML = '';
-
   const layout = document.createElement('div');
   layout.className = 'coverage-v2-layout';
 
@@ -15,82 +13,74 @@ export default function decorate(block) {
 
   rows.forEach((row) => {
     const cells = [...row.children];
-    const col1 = cells[0]?.textContent?.trim() || '';
-    const col2 = cells[1]?.textContent?.trim() || '';
-    const col3 = cells[2]?.innerHTML?.trim() || cells[2]?.textContent?.trim() || '';
+    const iconCell = cells[0];
+    const titleCell = cells[1];
+    const contentCell = cells[2];
 
-    if (col1 === '---') {
+    const iconText = iconCell?.textContent?.trim() || '';
+
+    if (iconText === '---') {
       isSidebar = true;
+      row.remove();
       return;
     }
 
     if (!isSidebar) {
-      const item = document.createElement('div');
-      item.className = 'coverage-v2-item';
+      row.className = 'coverage-v2-item';
 
       const header = document.createElement('div');
       header.className = 'coverage-v2-header';
 
-      if (col1) {
-        const iconEl = document.createElement('span');
-        iconEl.className = `coverage-v2-icon ${col1}`;
-        header.append(iconEl);
+      if (iconCell) {
+        iconCell.className = `coverage-v2-icon ${iconText}`;
       }
 
-      const titleEl = document.createElement('span');
-      titleEl.className = 'coverage-v2-title';
-      titleEl.textContent = col2;
-      header.append(titleEl);
+      if (titleCell) {
+        titleCell.className = 'coverage-v2-title';
+      }
 
       const chevron = document.createElement('span');
       chevron.className = 'coverage-v2-chevron';
-      header.append(chevron);
 
-      const panel = document.createElement('div');
-      panel.className = 'coverage-v2-panel';
-      panel.innerHTML = col3;
+      header.append(iconCell, titleCell, chevron);
+
+      if (contentCell) {
+        contentCell.className = 'coverage-v2-panel';
+      }
+
+      row.innerHTML = '';
+      row.append(header, contentCell);
 
       header.addEventListener('click', () => {
-        const wasOpen = item.classList.contains('is-open');
+        const wasOpen = row.classList.contains('is-open');
         accordionCol.querySelectorAll('.coverage-v2-item').forEach((i) => i.classList.remove('is-open'));
-        if (!wasOpen) item.classList.add('is-open');
+        if (!wasOpen) row.classList.add('is-open');
       });
 
-      item.append(header, panel);
-      accordionCol.append(item);
+      accordionCol.append(row);
     } else {
-      const card = document.createElement('div');
-      card.className = 'coverage-v2-card';
+      row.className = 'coverage-v2-card';
 
-      if (col1) {
-        const iconWrapper = document.createElement('div');
-        iconWrapper.className = 'coverage-v2-card-icon';
-        const img = cells[0]?.querySelector('picture') || cells[0]?.querySelector('img');
-        if (img) {
-          iconWrapper.append(img.cloneNode(true));
-        } else {
+      if (iconCell) {
+        iconCell.className = 'coverage-v2-card-icon';
+        const img = iconCell.querySelector('picture') || iconCell.querySelector('img');
+        if (!img) {
           const iconEl = document.createElement('span');
-          iconEl.className = col1;
-          iconWrapper.append(iconEl);
+          iconEl.className = iconText;
+          iconCell.textContent = '';
+          iconCell.append(iconEl);
         }
-        card.append(iconWrapper);
       }
 
-      if (col2) {
-        const titleEl = document.createElement('h3');
-        titleEl.className = 'coverage-v2-card-title';
-        titleEl.textContent = col2;
-        card.append(titleEl);
+      if (titleCell) {
+        titleCell.className = 'coverage-v2-card-title';
       }
 
-      if (col3) {
-        const textEl = document.createElement('p');
-        textEl.className = 'coverage-v2-card-text';
-        textEl.innerHTML = col3;
-        card.append(textEl);
+      if (contentCell) {
+        contentCell.className = 'coverage-v2-card-text';
       }
 
-      cardsCol.append(card);
+      cardsCol.append(row);
     }
   });
 
@@ -99,5 +89,6 @@ export default function decorate(block) {
   }
 
   layout.append(accordionCol, cardsCol);
+  block.innerHTML = '';
   block.append(layout);
 }
