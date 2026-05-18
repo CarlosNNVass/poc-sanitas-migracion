@@ -56,7 +56,7 @@
         {
           "component": "richtext",
           "valueType": "string",
-          "name": "content",
+          "name": "modalContent",
           "value": "",
           "label": "Modal content (detailed answer)"
         }

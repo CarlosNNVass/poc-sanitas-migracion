@@ -29,6 +29,11 @@
   box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
 }
 
+.faq-cards-card:focus-visible {
+  outline: 2px solid #0079c8;
+  outline-offset: 2px;
+}
+
 .faq-cards-header {
   display: flex;
   justify-content: space-between;
@@ -55,4 +60,57 @@
   color: #4E5357;
   line-height: 1.5;
   margin: 0;
+}
+
+/* Modal */
+.faq-cards-modal {
+  border: none;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 32px rgb(0 0 0 / 20%);
+}
+
+.faq-cards-modal::backdrop {
+  background: rgb(30 30 30 / 80%);
+}
+
+.faq-cards-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 2.4rem;
+  cursor: pointer;
+  color: #21272a;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-cards-modal-close:hover {
+  color: #0079c8;
+}
+
+.faq-cards-modal-content {
+  font-size: 1.5rem;
+  color: #21272a;
+  line-height: 1.6;
+}
+
+.faq-cards-modal-content p {
+  margin-bottom: 12px;
+}
+
+.faq-cards-modal-content a {
+  color: #0079c8;
 }

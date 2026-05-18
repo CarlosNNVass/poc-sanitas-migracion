@@ -1,5 +1,3 @@
-import { createModal } from '../../scripts/modal.js';
-
 export default function decorate(block) {
   const rows = [...block.children];
   block.innerHTML = '';
@@ -11,10 +9,12 @@ export default function decorate(block) {
     const cells = [...row.children];
     const title = cells[0]?.textContent?.trim() || '';
     const description = cells[1]?.textContent?.trim() || '';
-    const modalContent = cells[2]?.innerHTML?.trim() || cells[2]?.textContent?.trim() || '';
+    const modalContent = cells[2]?.innerHTML?.trim() || '';
 
     const card = document.createElement('div');
     card.className = 'faq-cards-card';
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
 
     const header = document.createElement('div');
     header.className = 'faq-cards-header';
@@ -35,12 +35,40 @@ export default function decorate(block) {
 
     card.append(header, desc);
 
-    if (modalContent) {
-      card.style.cursor = 'pointer';
-      card.addEventListener('click', () => {
-        createModal(title, modalContent);
+    card.addEventListener('click', () => {
+      const dialog = document.createElement('dialog');
+      dialog.className = 'faq-cards-modal';
+
+      const closeBtn = document.createElement('button');
+      closeBtn.className = 'faq-cards-modal-close';
+      closeBtn.textContent = '×';
+      closeBtn.addEventListener('click', () => {
+        dialog.close();
+        dialog.remove();
       });
-    }
+
+      const content = document.createElement('div');
+      content.className = 'faq-cards-modal-content';
+      content.innerHTML = modalContent;
+
+      dialog.append(closeBtn, content);
+      document.body.append(dialog);
+      dialog.showModal();
+
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) {
+          dialog.close();
+          dialog.remove();
+        }
+      });
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
 
     grid.append(card);
   });
