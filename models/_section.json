@@ -90,7 +90,8 @@
         "pricing-table",
         "conditions-table",
         "download-link",
-        "cta-cards"
+        "cta-cards",
+        "faq-cards"
       ]
     }
   ]

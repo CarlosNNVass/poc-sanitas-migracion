@@ -39,7 +39,8 @@
       "pricing-table",
       "conditions-table",
       "download-link",
-      "cta-cards"
+      "cta-cards",
+      "faq-cards"
     ]
   },
   {
@@ -115,6 +116,12 @@
     "id": "download-link",
     "components": [
       "download-link-item"
+    ]
+  },
+  {
+    "id": "faq-cards",
+    "components": [
+      "faq-cards-item"
     ]
   },
   {
