@@ -33,6 +33,7 @@ export default function decorate(block) {
 
       if (iconCell) {
         iconCell.className = `coverage-v2-icon ${iconText}`;
+        iconCell.textContent = '';
       }
 
       if (titleCell) {
@@ -52,9 +53,7 @@ export default function decorate(block) {
       row.append(header, contentCell);
 
       header.addEventListener('click', () => {
-        const wasOpen = row.classList.contains('is-open');
-        accordionCol.querySelectorAll('.coverage-v2-item').forEach((i) => i.classList.remove('is-open'));
-        if (!wasOpen) row.classList.add('is-open');
+        row.classList.toggle('is-open');
       });
 
       accordionCol.append(row);
@@ -83,10 +82,6 @@ export default function decorate(block) {
       cardsCol.append(row);
     }
   });
-
-  if (accordionCol.children.length > 0) {
-    accordionCol.querySelector('.coverage-v2-item')?.classList.add('is-open');
-  }
 
   layout.append(accordionCol, cardsCol);
   block.innerHTML = '';

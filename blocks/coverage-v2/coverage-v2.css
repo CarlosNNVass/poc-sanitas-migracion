@@ -53,6 +53,11 @@
   color: #0079c8;
 }
 
+.coverage-v2-item.is-open .coverage-v2-title {
+  font-weight: 700;
+  color: #0D1846;
+}
+
 .coverage-v2-chevron {
   width: 20px;
   height: 20px;
@@ -75,11 +80,6 @@
 .coverage-v2-item.is-open .coverage-v2-chevron::after {
   transform: rotate(-135deg);
   top: 10px;
-}
-
-.coverage-v2-item.is-open .coverage-v2-title {
-  font-weight: 700;
-  color: #0D1846;
 }
 
 .coverage-v2-panel {
