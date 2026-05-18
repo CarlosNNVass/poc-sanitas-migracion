@@ -763,6 +763,29 @@
     ]
   },
   {
+    "id": "info-box-v2-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon class (e.g. a-icon__phone24HoursLinear)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "label": "Description"
+      }
+    ]
+  },
+  {
     "id": "info-box-item",
     "fields": [
       {

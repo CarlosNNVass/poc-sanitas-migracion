@@ -34,7 +34,8 @@
       "promotion-banner-v2",
       "accordion-v2",
       "info-box",
-      "coverage-section"
+      "coverage-section",
+      "info-box-v2"
     ]
   },
   {
@@ -104,6 +105,12 @@
     "id": "form",
     "components": [
       "form-field"
+    ]
+  },
+  {
+    "id": "info-box-v2",
+    "components": [
+      "info-box-v2-item"
     ]
   },
   {

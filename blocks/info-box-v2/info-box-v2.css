@@ -1,0 +1,44 @@
+.info-box-v2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (width >= 62em) {
+  .info-box-v2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.info-box-v2-card {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.info-box-v2-icon {
+  display: block;
+  font-size: 5rem;
+  color: #0079c8;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.info-box-v2-title {
+  font-size: 1.84rem;
+  font-weight: 900;
+  color: #0D1846;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.info-box-v2-text {
+  font-size: 1.42rem;
+  color: #4E5357;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+
+.info-box-v2-text a {
+  color: #0079c8;
+}

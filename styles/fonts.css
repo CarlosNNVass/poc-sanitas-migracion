@@ -67,3 +67,15 @@
 .a-icon__calculatorSolid:before, .icon-calculator-solid:before {
     content: "\eb4b";
 }
+
+.a-icon__phone24HoursLinear::before, .icon-phone-24-hours-linear::before {
+    content: "\ea55";
+}
+
+.a-icon__appLinear::before, .icon-app-linear::before {
+    content: "\e980";
+}
+
+.a-icon__phoneLinear::before, .icon-phone-linear::before {
+    content: "\ea58";
+}
