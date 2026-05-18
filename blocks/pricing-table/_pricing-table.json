@@ -1,0 +1,61 @@
+{
+  "definitions": [
+    {
+      "title": "Pricing table",
+      "id": "pricing-table",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Pricing table",
+              "filter": "pricing-table"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Pricing table row",
+      "id": "pricing-table-row",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Pricing table row",
+              "model": "pricing-table-row"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "pricing-table-row",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "label",
+          "label": "Label (service name or footnote)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "value",
+          "label": "Value (price or empty for title/footnote)"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "pricing-table",
+      "components": [
+        "pricing-table-row"
+      ]
+    }
+  ]
+}

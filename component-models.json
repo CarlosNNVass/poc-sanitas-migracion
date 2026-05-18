@@ -1019,6 +1019,23 @@
     ]
   },
   {
+    "id": "pricing-table-row",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "label": "Label (service name or footnote)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "value",
+        "label": "Value (price or empty for title/footnote)"
+      }
+    ]
+  },
+  {
     "id": "promotion-banner-v2",
     "fields": [
       {

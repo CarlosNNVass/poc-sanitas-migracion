@@ -35,7 +35,8 @@
       "accordion-v2",
       "info-box",
       "coverage-section",
-      "info-box-v2"
+      "info-box-v2",
+      "pricing-table"
     ]
   },
   {
@@ -135,6 +136,12 @@
     "id": "opinions",
     "components": [
       "opinion-item"
+    ]
+  },
+  {
+    "id": "pricing-table",
+    "components": [
+      "pricing-table-row"
     ]
   },
   {
