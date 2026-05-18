@@ -154,6 +154,10 @@ h2 {
   }
 }
 
+h2 strong {
+  color: #0079c8;
+}
+
 h3 {
   font-size: 2.4rem;
 }
