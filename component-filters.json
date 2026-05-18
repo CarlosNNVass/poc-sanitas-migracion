@@ -35,6 +35,7 @@
       "accordion-v2",
       "info-box",
       "coverage-section",
+      "coverage-v2",
       "info-box-v2",
       "pricing-table",
       "conditions-table",
@@ -104,6 +105,12 @@
     "id": "coverage-section",
     "components": [
       "coverage-section-item"
+    ]
+  },
+  {
+    "id": "coverage-v2",
+    "components": [
+      "coverage-v2-item"
     ]
   },
   {

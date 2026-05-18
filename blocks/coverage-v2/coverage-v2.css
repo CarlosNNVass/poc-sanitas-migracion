@@ -1,0 +1,135 @@
+.coverage-v2-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (width >= 62em) {
+  .coverage-v2-layout {
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* Accordion column */
+.coverage-v2-accordion {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.coverage-v2-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.coverage-v2-item:last-child {
+  border-bottom: none;
+}
+
+.coverage-v2-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.coverage-v2-header:hover {
+  background-color: #f9f9f9;
+}
+
+.coverage-v2-icon {
+  font-size: 2.4rem;
+  color: #0D1846;
+  min-width: 32px;
+  text-align: center;
+}
+
+.coverage-v2-title {
+  flex: 1;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0079c8;
+}
+
+.coverage-v2-chevron {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.coverage-v2-chevron::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #0079c8;
+  border-bottom: 2px solid #0079c8;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.coverage-v2-item.is-open .coverage-v2-chevron::after {
+  transform: rotate(-135deg);
+  top: 10px;
+}
+
+.coverage-v2-item.is-open .coverage-v2-title {
+  font-weight: 700;
+  color: #0D1846;
+}
+
+.coverage-v2-panel {
+  display: none;
+  padding: 0 20px 18px 68px;
+  font-size: 1.5rem;
+  color: #4E5357;
+  line-height: 1.5;
+}
+
+.coverage-v2-item.is-open .coverage-v2-panel {
+  display: block;
+}
+
+/* Cards column */
+.coverage-v2-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.coverage-v2-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.coverage-v2-card-icon {
+  margin-bottom: 16px;
+  font-size: 4rem;
+  color: #0079c8;
+}
+
+.coverage-v2-card-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.coverage-v2-card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0D1846;
+  margin-bottom: 8px;
+}
+
+.coverage-v2-card-text {
+  font-size: 1.5rem;
+  color: #4E5357;
+  line-height: 1.5;
+  margin: 0;
+}
