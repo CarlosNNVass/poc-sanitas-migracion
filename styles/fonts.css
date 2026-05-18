@@ -1,25 +1,25 @@
-/* stylelint-disable max-line-length */
+/* stylelint-disable max-line-length, selector-class-pattern */
 @font-face {
   font-display: block;
-  font-family: bupaicons_ds;
+  font-family: "bupaicons_ds";
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/bupaicons_ds.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: "Bupa";
-    src: url('../fonts/Metropolis-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
+  font-family: Bupa;
+  src: url('../fonts/Metropolis-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Bupa";
-    src: url('../fonts/Metropolis-Regular.woff2') format('woff2');
-    font-style: normal;
-    font-display: swap;
+  font-family: Bupa;
+  src: url('../fonts/Metropolis-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -31,51 +31,62 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* stylelint-disable font-family-no-missing-generic-family-keyword, declaration-property-value-no-unknown */
 [class*="icon__"] {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: bupaicons_ds;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    line-height: 1;
-    speak: none;
-    text-transform: none;
-    position: relative;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "bupaicons_ds";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  speak: never;
+  text-transform: none;
+  position: relative;
 }
-.a-icon__coPaymentLinear:before, .icon-co-payment-linear:before {
-    content: "\e9d1";
+
+/* stylelint-enable font-family-no-missing-generic-family-keyword, declaration-property-value-no-unknown */
+
+.a-icon__coPaymentLinear::before, .icon-co-payment-linear::before {
+  content: "\e9d1";
 }
-.a-icon__shieldProtectionLinear:before, .icon-shield-protection-linear:before {
-    content: "\ebdc";
+
+.a-icon__shieldProtectionLinear::before, .icon-shield-protection-linear::before {
+  content: "\ebdc";
 }
-.a-icon__purseLinear:before, .icon-purse-linear:before {
-    content: "\ea64";
+
+.a-icon__purseLinear::before, .icon-purse-linear::before {
+  content: "\ea64";
 }
-.a-icon__animalFootprintLinear:before, .icon-animal-footprint-linear:before {
-    content: "\ed7a";
+
+.a-icon__animalFootprintLinear::before, .icon-animal-footprint-linear::before {
+  content: "\ed7a";
 }
-.a-icon__dentistryLinear:before, .icon-dentistry-linear:before {
-    content: "\eb0e";
+
+.a-icon__dentistryLinear::before, .icon-dentistry-linear::before {
+  content: "\eb0e";
 }
-.a-icon__worldLinear:before, .icon-world-linear:before {
-    content: "\eaba";
+
+.a-icon__worldLinear::before, .icon-world-linear::before {
+  content: "\eaba";
 }
-.a-icon__listLinear:before, .icon-list-linear:before {
-    content: "\ea29";
+
+.a-icon__listLinear::before, .icon-list-linear::before {
+  content: "\ea29";
 }
-.a-icon__calculatorSolid:before, .icon-calculator-solid:before {
-    content: "\eb4b";
+
+.a-icon__calculatorSolid::before, .icon-calculator-solid::before {
+  content: "\eb4b";
 }
 
 .a-icon__phone24HoursLinear::before, .icon-phone-24-hours-linear::before {
-    content: "\ea55";
+  content: "\ea55";
 }
 
 .a-icon__appLinear::before, .icon-app-linear::before {
-    content: "\e980";
+  content: "\e980";
 }
 
 .a-icon__phoneLinear::before, .icon-phone-linear::before {
-    content: "\ea58";
+  content: "\ea58";
 }
