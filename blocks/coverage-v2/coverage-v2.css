@@ -16,6 +16,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
+  align-self: start;
 }
 
 .coverage-v2-item {
@@ -46,16 +47,19 @@
   text-align: center;
 }
 
-.coverage-v2-title {
+.coverage-v2-title,
+.coverage-v2-title p {
   flex: 1;
   font-size: 1.6rem;
   font-weight: 600;
-  color: #0079c8;
+  color: #0079c8 !important;
+  margin: 0;
 }
 
-.coverage-v2-item.is-open .coverage-v2-title {
+.coverage-v2-item.is-open .coverage-v2-title,
+.coverage-v2-item.is-open .coverage-v2-title p {
   font-weight: 700;
-  color: #0D1846;
+  color: #0D1846 !important;
 }
 
 .coverage-v2-chevron {
@@ -99,6 +103,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  align-self: start;
 }
 
 .coverage-v2-card {
