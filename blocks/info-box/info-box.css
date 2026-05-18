@@ -1,7 +1,13 @@
 .info-box {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 24px;
+}
+
+@media (width >= 62em) {
+  .info-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .info-box-card {
