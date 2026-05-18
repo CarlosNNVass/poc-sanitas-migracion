@@ -36,7 +36,8 @@
       "info-box",
       "coverage-section",
       "info-box-v2",
-      "pricing-table"
+      "pricing-table",
+      "conditions-table"
     ]
   },
   {
@@ -82,6 +83,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "conditions-table",
+    "components": [
+      "conditions-table-row"
     ]
   },
   {

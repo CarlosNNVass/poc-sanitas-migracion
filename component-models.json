@@ -458,6 +458,23 @@
     ]
   },
   {
+    "id": "conditions-table-row",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "label",
+        "label": "Label/text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "value",
+        "label": "Value (empty for title/subtitle/callout)"
+      }
+    ]
+  },
+  {
     "id": "contact",
     "fields": [
       {
