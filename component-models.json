@@ -926,6 +926,29 @@
     ]
   },
   {
+    "id": "promotion-banner-v2",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title (blue band)"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "body",
+        "label": "Body text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "promo",
+        "label": "Promo text (green box)"
+      }
+    ]
+  },
+  {
     "id": "promotion-banner",
     "fields": [
       {
