@@ -89,7 +89,8 @@
         "info-box-v2",
         "pricing-table",
         "conditions-table",
-        "download-link"
+        "download-link",
+        "cta-cards"
       ]
     }
   ]

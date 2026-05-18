@@ -1,0 +1,75 @@
+.cta-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (width >= 62em) {
+  .cta-cards-grid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.cta-cards-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.cta-cards-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #0D1846;
+  margin-bottom: 8px;
+}
+
+.cta-cards-desc {
+  font-size: 1.4rem;
+  color: #4E5357;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.cta-cards-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cta-cards-btn-outline {
+  color: #0079c8;
+  border: 2px solid #0079c8;
+  background: transparent;
+}
+
+.cta-cards-btn-outline::before {
+  content: '↓';
+  font-size: 1.2rem;
+}
+
+.cta-cards-btn-outline:hover {
+  background-color: #f0f8ff;
+}
+
+.cta-cards-btn-primary {
+  color: #fff;
+  background-color: #db3907;
+  border: 2px solid #db3907;
+}
+
+.cta-cards-btn-primary::before {
+  content: '▦';
+  font-size: 1.2rem;
+}
+
+.cta-cards-btn-primary:hover {
+  background-color: #992805;
+  border-color: #992805;
+}

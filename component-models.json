@@ -556,6 +556,51 @@
     ]
   },
   {
+    "id": "cta-cards-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Link text"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "style",
+        "label": "Button style",
+        "options": [
+          {
+            "name": "Outline (download)",
+            "value": "outline"
+          },
+          {
+            "name": "Primary (red)",
+            "value": "primary"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "download-link-item",
     "fields": [
       {

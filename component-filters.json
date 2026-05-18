@@ -38,7 +38,8 @@
       "info-box-v2",
       "pricing-table",
       "conditions-table",
-      "download-link"
+      "download-link",
+      "cta-cards"
     ]
   },
   {
@@ -102,6 +103,12 @@
     "id": "coverage-section",
     "components": [
       "coverage-section-item"
+    ]
+  },
+  {
+    "id": "cta-cards",
+    "components": [
+      "cta-cards-item"
     ]
   },
   {
