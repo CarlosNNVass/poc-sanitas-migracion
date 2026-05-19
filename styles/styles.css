@@ -512,6 +512,15 @@ main .section.highlight {
     grid-template-columns: 3fr 1fr;
     gap: 32px;
     align-items: start;
+    max-width: 1200px;
+  }
+
+  .section.contact-grid > div > .contact-v2-wrapper {
+    grid-column: 1;
+  }
+
+  .section.contact-grid > div > .sidebar-links-wrapper {
+    grid-column: 2;
   }
 }
 
