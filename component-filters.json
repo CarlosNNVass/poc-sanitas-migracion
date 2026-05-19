@@ -37,6 +37,7 @@
       "coverage-section",
       "coverage-v2",
       "contact-v2",
+      "sidebar-links",
       "info-box-v2",
       "pricing-table",
       "conditions-table",
@@ -190,6 +191,12 @@
     "id": "service-cards",
     "components": [
       "service-card"
+    ]
+  },
+  {
+    "id": "sidebar-links",
+    "components": [
+      "sidebar-links-item"
     ]
   }
 ]

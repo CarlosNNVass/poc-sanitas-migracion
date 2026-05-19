@@ -1,0 +1,61 @@
+{
+  "definitions": [
+    {
+      "title": "Sidebar links",
+      "id": "sidebar-links",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Sidebar links",
+              "filter": "sidebar-links"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Sidebar links item",
+      "id": "sidebar-links-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Sidebar links item",
+              "model": "sidebar-links-item",
+              "modelFields": ["text"]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "sidebar-links",
+      "fields": []
+    },
+    {
+      "id": "sidebar-links-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "text",
+          "value": "",
+          "label": "Content (text or link)"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "sidebar-links",
+      "components": [
+        "sidebar-links-item"
+      ]
+    }
+  ]
+}

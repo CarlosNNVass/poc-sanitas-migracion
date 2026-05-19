@@ -1,0 +1,59 @@
+.sidebar-links-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.sidebar-links-title,
+.sidebar-links-title p {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0D1846;
+  margin: 0 0 12px;
+}
+
+.sidebar-links-item {
+  margin-bottom: 8px;
+}
+
+.sidebar-links-item:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-links-link,
+.sidebar-links-link p {
+  margin: 0;
+}
+
+.sidebar-links-link a {
+  font-size: 1.4rem;
+  color: #0079c8;
+  text-decoration: none;
+}
+
+.sidebar-links-link a:hover {
+  text-decoration: underline;
+}
+
+/* Last item with icon */
+.sidebar-links-item:last-child a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.sidebar-links-item:last-child a::before {
+  content: 'ℹ';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #0079c8;
+  color: #fff;
+  font-size: 1rem;
+}

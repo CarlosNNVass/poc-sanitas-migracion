@@ -1317,6 +1317,22 @@
     ]
   },
   {
+    "id": "sidebar-links",
+    "fields": []
+  },
+  {
+    "id": "sidebar-links-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Content (text or link)"
+      }
+    ]
+  },
+  {
     "id": "video",
     "fields": [
       {
