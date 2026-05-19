@@ -70,4 +70,17 @@ export default function decorate(block) {
   wrapper.append(header, grid);
   block.innerHTML = '';
   block.append(wrapper);
+
+  // Apply grid to parent section if sidebar-links is present as sibling
+  requestAnimationFrame(() => {
+    const section = block.closest('.section');
+    const sectionDiv = section?.querySelector(':scope > div');
+    if (sectionDiv && sectionDiv.querySelector('.sidebar-links-wrapper')) {
+      sectionDiv.style.display = 'grid';
+      sectionDiv.style.gridTemplateColumns = '3fr 1fr';
+      sectionDiv.style.gap = '32px';
+      sectionDiv.style.alignItems = 'start';
+    }
+  });
+}
 }

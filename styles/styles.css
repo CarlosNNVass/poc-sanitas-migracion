@@ -506,14 +506,6 @@ main .section.highlight {
   padding-left: 0;
 }
 
-@media (width >= 62em) {
-  .section > div:has(.contact-v2-wrapper):has(.sidebar-links-wrapper) {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 32px;
-    align-items: start;
-  }
-}
 
 dialog::backdrop {
   opacity: .9;
