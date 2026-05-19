@@ -76,8 +76,6 @@
   border-color: #992805;
 }
 
-.cta-cards-link-cell,
-.cta-cards-linktext-cell,
-.cta-cards-style-cell {
-  display: none;
+.cta-cards-hidden {
+  display: none !important;
 }

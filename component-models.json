@@ -593,18 +593,24 @@
     ]
   },
   {
+    "id": "cta-cards",
+    "fields": []
+  },
+  {
     "id": "cta-cards-item",
     "fields": [
       {
         "component": "text",
         "valueType": "string",
         "name": "title",
+        "value": "",
         "label": "Title"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "description",
+        "value": "",
         "label": "Description"
       },
       {
@@ -617,7 +623,8 @@
         "component": "text",
         "valueType": "string",
         "name": "linkText",
-        "label": "Link text"
+        "value": "",
+        "label": "Button text"
       },
       {
         "component": "select",

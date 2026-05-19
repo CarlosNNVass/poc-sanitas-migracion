@@ -13,47 +13,36 @@ export default function decorate(block) {
     const styleCell = cells[4];
 
     const style = styleCell?.textContent?.trim() || '';
+    const linkEl = linkCell?.querySelector('a');
+    const href = linkEl?.getAttribute('href') || linkCell?.textContent?.trim() || '#';
+    const linkText = linkTextCell?.textContent?.trim() || linkEl?.textContent?.trim() || '';
 
     row.className = 'cta-cards-card';
 
     if (titleCell) titleCell.className = 'cta-cards-title';
     if (descCell) descCell.className = 'cta-cards-desc';
 
-    // Build the button from link + linkText + style
-    if (linkCell) {
-      const linkEl = linkCell.querySelector('a');
-      const href = linkEl?.getAttribute('href') || linkCell.textContent?.trim() || '#';
-      const linkText = linkTextCell?.textContent?.trim() || linkEl?.textContent?.trim() || '';
-
-      const btn = document.createElement('a');
-      btn.href = href;
-      btn.textContent = linkText;
-
-      if (style === 'primary') {
-        btn.className = 'cta-cards-btn cta-cards-btn-primary';
-      } else {
-        btn.className = 'cta-cards-btn cta-cards-btn-outline';
-      }
-
-      if (href.endsWith('.pdf')) btn.target = '_blank';
-
-      linkCell.className = 'cta-cards-link-cell';
-      linkCell.style.display = 'none';
-      if (linkTextCell) {
-        linkTextCell.className = 'cta-cards-linktext-cell';
-        linkTextCell.style.display = 'none';
-      }
-      if (styleCell) {
-        styleCell.className = 'cta-cards-style-cell';
-        styleCell.style.display = 'none';
-      }
-
-      row.innerHTML = '';
-      row.append(titleCell, descCell, btn, linkCell, linkTextCell, styleCell);
+    // Build button
+    const btn = document.createElement('a');
+    btn.href = href;
+    btn.textContent = linkText;
+    if (style === 'primary') {
+      btn.className = 'cta-cards-btn cta-cards-btn-primary';
     } else {
-      row.innerHTML = '';
-      row.append(titleCell, descCell);
+      btn.className = 'cta-cards-btn cta-cards-btn-outline';
     }
+    if (href.endsWith('.pdf')) btn.target = '_blank';
+
+    // Hide raw data cells but keep in DOM for UE
+    if (linkCell) { linkCell.className = 'cta-cards-hidden'; }
+    if (linkTextCell) { linkTextCell.className = 'cta-cards-hidden'; }
+    if (styleCell) { styleCell.className = 'cta-cards-hidden'; }
+
+    row.innerHTML = '';
+    row.append(titleCell, descCell, btn);
+    if (linkCell) row.append(linkCell);
+    if (linkTextCell) row.append(linkTextCell);
+    if (styleCell) row.append(styleCell);
 
     grid.append(row);
   });
