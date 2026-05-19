@@ -77,6 +77,7 @@ export default function decorate(block) {
     const parent = blockWrapper?.parentElement;
     if (parent && parent.querySelector('.sidebar-links-wrapper')) {
       parent.style.display = 'flex';
+      parent.style.flexWrap = 'wrap';
       parent.style.gap = '32px';
       parent.style.alignItems = 'start';
       parent.style.maxWidth = '1200px';
