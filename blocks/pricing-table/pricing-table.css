@@ -5,13 +5,18 @@
   padding: 32px 40px;
 }
 
-.pricing-table-title {
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: #0D1846;
+.pricing-table-title-row {
   margin-bottom: 16px;
   padding-bottom: 16px;
   border-bottom: 2px solid #0D1846;
+}
+
+.pricing-table-title,
+.pricing-table-title p {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #0D1846;
+  margin: 0;
 }
 
 .pricing-table-rows {
@@ -25,25 +30,29 @@
   align-items: baseline;
   padding: 18px 0;
   border-bottom: 1px dotted #ccc;
+  gap: 16px;
 }
 
 .pricing-table-row:last-child {
   border-bottom: none;
 }
 
-.pricing-table-label {
+.pricing-table-label,
+.pricing-table-label p {
   font-size: 1.5rem;
   color: #21272a;
   flex: 1;
+  margin: 0;
 }
 
-.pricing-table-value {
+.pricing-table-value,
+.pricing-table-value p {
   font-size: 1.5rem;
   font-weight: 700;
   color: #21272a;
   text-align: right;
   white-space: nowrap;
-  margin-left: 16px;
+  margin: 0;
 }
 
 .pricing-table-footnotes {
@@ -52,13 +61,18 @@
   border-top: 1px solid #e0e0e0;
 }
 
-.pricing-table-footnotes p {
-  font-size: 1.2rem;
-  color: #6b7075;
-  line-height: 1.5;
+.pricing-table-footnote-row {
   margin-bottom: 8px;
 }
 
-.pricing-table-footnotes p:last-child {
+.pricing-table-footnote-row:last-child {
   margin-bottom: 0;
+}
+
+.pricing-table-footnote-text,
+.pricing-table-footnote-text p {
+  font-size: 1.2rem;
+  color: #6b7075;
+  line-height: 1.5;
+  margin: 0;
 }
