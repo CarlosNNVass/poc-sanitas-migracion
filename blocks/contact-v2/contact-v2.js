@@ -79,6 +79,8 @@ export default function decorate(block) {
       parent.style.display = 'flex';
       parent.style.gap = '32px';
       parent.style.alignItems = 'start';
+      parent.style.maxWidth = '1200px';
+      parent.style.margin = 'auto';
     }
   }, 100);
 }
