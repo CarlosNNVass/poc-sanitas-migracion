@@ -17,18 +17,20 @@
   padding: 32px;
 }
 
-.cta-cards-title {
+.cta-cards-title,
+.cta-cards-title p {
   font-size: 1.8rem;
   font-weight: 900;
   color: #0D1846;
-  margin-bottom: 8px;
+  margin: 0 0 8px;
 }
 
-.cta-cards-desc {
+.cta-cards-desc,
+.cta-cards-desc p {
   font-size: 1.4rem;
   color: #4E5357;
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 }
 
 .cta-cards-btn {
@@ -72,4 +74,10 @@
 .cta-cards-btn-primary:hover {
   background-color: #992805;
   border-color: #992805;
+}
+
+.cta-cards-link-cell,
+.cta-cards-linktext-cell,
+.cta-cards-style-cell {
+  display: none;
 }
