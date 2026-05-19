@@ -7,11 +7,31 @@
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/text/v1/text",
-            "template": {}
+            "template": {
+              "model": "text"
+            }
           }
         }
       }
     }
   ],
-  "models": []
+  "models": [
+    {
+      "id": "text",
+      "fields": [
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes",
+          "label": "Font size",
+          "options": [
+            {"name": "Default", "value": ""},
+            {"name": "Small (14px)", "value": "text-sm"},
+            {"name": "Extra small (12px)", "value": "text-xs"},
+            {"name": "Large (20px)", "value": "text-lg"}
+          ]
+        }
+      ]
+    }
+  ]
 }

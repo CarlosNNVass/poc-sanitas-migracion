@@ -507,6 +507,24 @@ main .section.highlight {
 }
 
 
+/* stylelint-disable-next-line no-descending-specificity */
+.text-sm p,
+.text-sm {
+  font-size: 1.4rem !important;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.text-xs p,
+.text-xs {
+  font-size: 1.2rem !important;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.text-lg p,
+.text-lg {
+  font-size: 2rem !important;
+}
+
 dialog::backdrop {
   opacity: .9;
   background: #1e1e1e;
