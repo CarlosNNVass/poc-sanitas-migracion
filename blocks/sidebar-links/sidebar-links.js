@@ -5,14 +5,17 @@ export default function decorate(block) {
   card.className = 'sidebar-links-card';
 
   rows.forEach((row, index) => {
-    const cells = [...row.children];
-    const cell = cells[0];
-
     if (index === 0) {
       row.className = 'sidebar-links-title';
     } else {
       row.className = 'sidebar-links-item';
-      if (cell) cell.className = 'sidebar-links-link';
+      // Remove button class from any decorated links
+      row.querySelectorAll('.button-container').forEach((bc) => {
+        bc.classList.remove('button-container');
+      });
+      row.querySelectorAll('.button').forEach((btn) => {
+        btn.classList.remove('button');
+      });
     }
 
     card.append(row);
