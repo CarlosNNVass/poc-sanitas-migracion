@@ -9,13 +9,12 @@ export default function decorate(block) {
     const titleCell = cells[0];
     const descCell = cells[1];
     const linkCell = cells[2];
-    const linkTextCell = cells[3];
-    const styleCell = cells[4];
+    const styleCell = cells[3];
 
     const style = styleCell?.textContent?.trim() || '';
     const linkEl = linkCell?.querySelector('a');
-    const href = linkEl?.getAttribute('href') || linkCell?.textContent?.trim() || '#';
-    const linkText = linkTextCell?.textContent?.trim() || linkEl?.textContent?.trim() || '';
+    const href = linkEl?.getAttribute('href') || '#';
+    const linkText = linkEl?.textContent?.trim() || '';
 
     row.className = 'cta-cards-card';
 
@@ -34,14 +33,12 @@ export default function decorate(block) {
     if (href.endsWith('.pdf')) btn.target = '_blank';
 
     // Hide raw data cells but keep in DOM for UE
-    if (linkCell) { linkCell.className = 'cta-cards-hidden'; }
-    if (linkTextCell) { linkTextCell.className = 'cta-cards-hidden'; }
-    if (styleCell) { styleCell.className = 'cta-cards-hidden'; }
+    if (linkCell) linkCell.className = 'cta-cards-hidden';
+    if (styleCell) styleCell.className = 'cta-cards-hidden';
 
     row.innerHTML = '';
     row.append(titleCell, descCell, btn);
     if (linkCell) row.append(linkCell);
-    if (linkTextCell) row.append(linkTextCell);
     if (styleCell) row.append(styleCell);
 
     grid.append(row);
