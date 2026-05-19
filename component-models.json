@@ -152,6 +152,10 @@
           {
             "name": "Left text",
             "value": "text-left"
+          },
+          {
+            "name": "Contact grid",
+            "value": "contact-grid"
           }
         ]
       }

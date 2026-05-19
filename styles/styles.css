@@ -506,6 +506,15 @@ main .section.highlight {
   padding-left: 0;
 }
 
+@media (width >= 62em) {
+  .section.contact-grid > div {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+}
+
 dialog::backdrop {
   opacity: .9;
   background: #1e1e1e;

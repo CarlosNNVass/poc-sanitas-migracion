@@ -46,9 +46,13 @@
               "name": "Banner",
               "value": "banner-section"
             },
-                        {
+            {
               "name": "Left text",
               "value": "text-left"
+            },
+            {
+              "name": "Contact grid",
+              "value": "contact-grid"
             }
           ]
         }
