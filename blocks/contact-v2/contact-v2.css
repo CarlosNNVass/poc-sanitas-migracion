@@ -1,0 +1,88 @@
+.contact-v2-wrapper {
+  text-align: center;
+}
+
+.contact-v2-header {
+  margin-bottom: 40px;
+}
+
+.contact-v2-title,
+.contact-v2-title p,
+.contact-v2-title h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #0D1846;
+  margin: 0 0 8px;
+}
+
+.contact-v2-subtitle,
+.contact-v2-subtitle p {
+  font-size: 1.6rem;
+  color: #4E5357;
+  margin: 0;
+}
+
+.contact-v2-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (width >= 48em) {
+  .contact-v2-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 62em) {
+  .contact-v2-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.contact-v2-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-v2-icon {
+  margin-bottom: 16px;
+}
+
+.contact-v2-icon img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.contact-v2-btn {
+  margin-bottom: 12px;
+}
+
+.contact-v2-btn a,
+.contact-v2-btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #0079c8;
+  color: #fff !important;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-v2-btn a:hover {
+  background-color: #00558c;
+}
+
+.contact-v2-text,
+.contact-v2-text p {
+  font-size: 1.3rem;
+  color: #4E5357;
+  line-height: 1.4;
+  margin: 0;
+}

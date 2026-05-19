@@ -475,6 +475,42 @@
     ]
   },
   {
+    "id": "contact-v2",
+    "fields": []
+  },
+  {
+    "id": "contact-v2-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttonText",
+        "value": "",
+        "label": "Button text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "buttonLink",
+        "label": "Button link"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Description text"
+      }
+    ]
+  },
+  {
     "id": "contact",
     "fields": [
       {
