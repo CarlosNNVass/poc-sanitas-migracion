@@ -41,7 +41,8 @@
   margin-bottom: 8px;
 }
 
-.faq-cards-title {
+.faq-cards-title,
+.faq-cards-title p {
   font-size: 1.6rem;
   font-weight: 700;
   color: #0079c8;
@@ -55,11 +56,16 @@
   font-weight: 300;
 }
 
-.faq-cards-desc {
+.faq-cards-desc,
+.faq-cards-desc p {
   font-size: 1.4rem;
   color: #4E5357;
   line-height: 1.5;
   margin: 0;
+}
+
+.faq-cards-modal-content {
+  display: none;
 }
 
 /* Modal */
@@ -101,16 +107,16 @@
   color: #0079c8;
 }
 
-.faq-cards-modal-content {
+.faq-cards-modal-body {
   font-size: 1.5rem;
   color: #21272a;
   line-height: 1.6;
 }
 
-.faq-cards-modal-content p {
+.faq-cards-modal-body p {
   margin-bottom: 12px;
 }
 
-.faq-cards-modal-content a {
+.faq-cards-modal-body a {
   color: #0079c8;
 }

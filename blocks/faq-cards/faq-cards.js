@@ -1,41 +1,48 @@
 export default function decorate(block) {
   const rows = [...block.children];
-  block.innerHTML = '';
 
   const grid = document.createElement('div');
   grid.className = 'faq-cards-grid';
 
   rows.forEach((row) => {
     const cells = [...row.children];
-    const title = cells[0]?.textContent?.trim() || '';
-    const description = cells[1]?.textContent?.trim() || '';
-    const modalContent = cells[2]?.innerHTML?.trim() || '';
+    const titleCell = cells[0];
+    const descCell = cells[1];
+    const modalCell = cells[2];
 
-    const card = document.createElement('div');
-    card.className = 'faq-cards-card';
-    card.setAttribute('role', 'button');
-    card.setAttribute('tabindex', '0');
+    row.className = 'faq-cards-card';
+    row.setAttribute('role', 'button');
+    row.setAttribute('tabindex', '0');
 
     const header = document.createElement('div');
     header.className = 'faq-cards-header';
 
-    const titleEl = document.createElement('h3');
-    titleEl.className = 'faq-cards-title';
-    titleEl.textContent = title;
+    if (titleCell) {
+      titleCell.className = 'faq-cards-title';
+    }
 
     const icon = document.createElement('span');
     icon.className = 'faq-cards-icon';
     icon.textContent = '+';
 
-    header.append(titleEl, icon);
+    header.append(titleCell, icon);
 
-    const desc = document.createElement('p');
-    desc.className = 'faq-cards-desc';
-    desc.textContent = description;
+    if (descCell) {
+      descCell.className = 'faq-cards-desc';
+    }
 
-    card.append(header, desc);
+    if (modalCell) {
+      modalCell.className = 'faq-cards-modal-content';
+      modalCell.style.display = 'none';
+    }
 
-    card.addEventListener('click', () => {
+    row.innerHTML = '';
+    row.append(header, descCell, modalCell);
+
+    row.addEventListener('click', () => {
+      const modalHTML = modalCell?.innerHTML?.trim() || '';
+      if (!modalHTML) return;
+
       const dialog = document.createElement('dialog');
       dialog.className = 'faq-cards-modal';
 
@@ -48,8 +55,8 @@ export default function decorate(block) {
       });
 
       const content = document.createElement('div');
-      content.className = 'faq-cards-modal-content';
-      content.innerHTML = modalContent;
+      content.className = 'faq-cards-modal-body';
+      content.innerHTML = modalHTML;
 
       dialog.append(closeBtn, content);
       document.body.append(dialog);
@@ -63,15 +70,16 @@ export default function decorate(block) {
       });
     });
 
-    card.addEventListener('keydown', (e) => {
+    row.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        card.click();
+        row.click();
       }
     });
 
-    grid.append(card);
+    grid.append(row);
   });
 
+  block.innerHTML = '';
   block.append(grid);
 }
